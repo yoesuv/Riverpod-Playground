@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 class CounterScreen extends StatelessWidget {
+  static const routeName = '/counter';
   const CounterScreen({super.key});
 
   @override
