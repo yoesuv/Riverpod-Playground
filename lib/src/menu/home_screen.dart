@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_playground/src/menu/counter/counter_screen.dart';
+import 'package:riverpod_playground/src/widgets/my_button.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home-screen';
@@ -28,20 +29,11 @@ class HomeScreen extends StatelessWidget {
               children: [
                 const SizedBox(height: 24),
                 Center(
-                  child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.teal,
-                    ),
+                  child: MyButton(
+                    label: 'Counter',
                     onPressed: () {
                       context.push(CounterScreen.routeName);
                     },
-                    child: const Text(
-                      'Counter',
-                      style: TextStyle(
-                        fontSize: 16,
-                        color: Colors.white,
-                      ),
-                    ),
                   ),
                 ),
               ],
