@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_playground/src/menu/counter/components/counter_action.dart';
 import 'package:riverpod_playground/src/menu/counter/components/text_counter.dart';
+import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
 class CounterScreen extends StatelessWidget {
   static const routeName = '/counter';
@@ -12,12 +13,7 @@ class CounterScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: const Text(
-          'Counter Screen',
-          style: TextStyle(
-            color: Colors.white,
-          ),
-        ),
+        title: const TitleAppBar(label: 'Counter'),
       ),
       body: const SafeArea(
         child: Center(

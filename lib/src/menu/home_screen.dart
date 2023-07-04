@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_playground/src/menu/counter/counter_screen.dart';
 import 'package:riverpod_playground/src/widgets/my_button.dart';
+import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
 class HomeScreen extends StatelessWidget {
   static const routeName = '/home-screen';
@@ -12,13 +13,7 @@ class HomeScreen extends StatelessWidget {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: const Text(
-          'Riverpod Playground',
-          style: TextStyle(
-            color: Colors.white,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
+        title: const TitleAppBar(label: 'Riverpod Playground'),
       ),
       body: SafeArea(
         child: SingleChildScrollView(
