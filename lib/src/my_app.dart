@@ -15,6 +15,9 @@ class MyApp extends StatelessWidget {
           theme: ThemeData(
             useMaterial3: true,
             colorScheme: ColorScheme.fromSeed(seedColor: Colors.teal),
+            appBarTheme: const AppBarTheme(
+              iconTheme: IconThemeData(color: Colors.white),
+            ),
           ),
           routeInformationProvider: router.routeInformationProvider,
           routeInformationParser: router.routeInformationParser,
