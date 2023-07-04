@@ -1,7 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_playground/src/menu/counter/components/counter_action.dart';
+import 'package:riverpod_playground/src/menu/counter/components/text_counter.dart';
 
 class CounterScreen extends StatelessWidget {
   static const routeName = '/counter';
+
   const CounterScreen({super.key});
 
   @override
@@ -16,13 +19,13 @@ class CounterScreen extends StatelessWidget {
           ),
         ),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
-              _textCounter(),
-              _counterAction(),
+              TextCounter(),
+              CounterAction(),
             ],
           ),
         ),
@@ -30,37 +33,4 @@ class CounterScreen extends StatelessWidget {
     );
   }
 
-  Widget _textCounter() {
-    return Text(
-      '7',
-      style: const TextStyle(
-        fontSize: 150,
-        fontWeight: FontWeight.bold,
-      ),
-    );
-  }
-
-  Widget _counterAction() {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        MaterialButton(
-          color: Colors.teal,
-          onPressed: () {},
-          child: const Icon(
-            Icons.remove,
-            color: Colors.white,
-          ),
-        ),
-        MaterialButton(
-          color: Colors.teal,
-          onPressed: () {},
-          child: const Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
-        )
-      ],
-    );
-  }
 }
