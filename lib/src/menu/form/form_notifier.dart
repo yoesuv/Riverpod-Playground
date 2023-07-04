@@ -1,5 +1,6 @@
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_playground/src/menu/form/form_state.dart';
+import 'package:riverpod_playground/src/utils/validation/email_validation.dart';
 import 'package:riverpod_playground/src/utils/validation/full_name_validation.dart';
 
 final formNotifier =
@@ -15,6 +16,14 @@ class FormNotifier extends StateNotifier<FormState> {
     state = state.copyWith(
       fullName: fullName,
       fullNameError: fullName.error,
+    );
+  }
+
+  void onEmailChanged(String value) {
+    final email = Email.dirty(value);
+    state = state.copyWith(
+      email: email,
+      emailError: email.error,
     );
   }
 
