@@ -15,7 +15,7 @@ class ButtonSubmit extends ConsumerWidget {
       padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
       child: MyButton(
         isEnabled: isValid,
-        label: 'Submit $isValid',
+        label: 'Submit',
         onPressed: () {},
       ),
     );

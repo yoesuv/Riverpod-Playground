@@ -17,6 +17,7 @@ class FormNotifier extends StateNotifier<FormState> {
       fullName: fullName,
       fullNameError: fullName.error,
     );
+    _validateInput();
   }
 
   void onEmailChanged(String value) {
@@ -24,6 +25,16 @@ class FormNotifier extends StateNotifier<FormState> {
     state = state.copyWith(
       email: email,
       emailError: email.error,
+    );
+    _validateInput();
+  }
+
+  void _validateInput() {
+    final fullName = state.fullName.isValid;
+    final email = state.email.isValid;
+    final check = fullName && email;
+    state = state.copyWith(
+      isFormValid: check,
     );
   }
 
