@@ -12,4 +12,9 @@ Tools • Dart 3.0.5 • DevTools 2.23.1
 
 
 ### Libraries ###
+- [Build Runner](https://pub.dev/packages/build_runner)
 - [Flutter Riverpod](https://pub.dev/packages/flutter_riverpod)
+- [Freezed](https://pub.dev/packages/freezed)
+- [Freezed Annotation](https://pub.dev/packages/freezed_annotation)
+- [Go Router](https://pub.dev/packages/go_router)
+- [Stack Trace](https://pub.dev/packages/stack_trace)
