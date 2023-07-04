@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_playground/src/menu/form/widgets/button_submit.dart';
 import 'package:riverpod_playground/src/menu/form/widgets/input_email.dart';
 import 'package:riverpod_playground/src/menu/form/widgets/input_full_name.dart';
-import 'package:riverpod_playground/src/widgets/my_button.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
 class FormScreen extends StatelessWidget {
@@ -29,17 +29,8 @@ class FormScreen extends StatelessWidget {
           ),
         ),
       ),
-      bottomNavigationBar: _buttonSubmit(),
+      bottomNavigationBar: const ButtonSubmit(),
     );
   }
 
-  Widget _buttonSubmit() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
-      child: MyButton(
-        label: 'Submit',
-        onPressed: () {},
-      ),
-    );
-  }
 }
