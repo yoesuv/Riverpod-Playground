@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
 import 'package:riverpod_playground/src/menu/form/form_notifier.dart';
+import 'package:riverpod_playground/src/menu/form/form_result_screen.dart';
 import 'package:riverpod_playground/src/widgets/my_button.dart';
 
 class ButtonSubmit extends ConsumerWidget {
@@ -16,7 +18,9 @@ class ButtonSubmit extends ConsumerWidget {
       child: MyButton(
         isEnabled: isValid,
         label: 'Submit',
-        onPressed: () {},
+        onPressed: () {
+          context.push(FormResultScreen.routeName);
+        },
       ),
     );
   }
