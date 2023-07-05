@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:riverpod_playground/src/menu/counter/counter_screen.dart';
+import 'package:riverpod_playground/src/menu/form/form_screen.dart';
 import 'package:riverpod_playground/src/widgets/my_button.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
@@ -28,6 +29,15 @@ class HomeScreen extends StatelessWidget {
                     label: 'Counter',
                     onPressed: () {
                       context.push(CounterScreen.routeName);
+                    },
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Center(
+                  child: MyButton(
+                    label: 'Form & Arguments',
+                    onPressed: () {
+                      context.push(FormScreen.routeName);
                     },
                   ),
                 ),
