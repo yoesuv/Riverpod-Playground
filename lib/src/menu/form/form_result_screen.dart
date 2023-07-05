@@ -1,9 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
+class FormResultScreenArgs {
+  FormResultScreenArgs({this.fullName, this.email});
+  final String? fullName;
+  final String? email;
+}
+
 class FormResultScreen extends StatelessWidget {
   static const routeName = '/form-result';
-  const FormResultScreen({super.key});
+  const FormResultScreen({super.key, this.args});
+
+  final FormResultScreenArgs? args;
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +28,7 @@ class FormResultScreen extends StatelessWidget {
           children: [
             Row(
               children: [
-                Text(
+                const Text(
                   'Full Name : ',
                   style: TextStyle(
                     color: Colors.black,
@@ -28,12 +36,12 @@ class FormResultScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Text('Yusuf Saifudin'),
+                Text(args?.fullName ?? ''),
               ],
             ),
             Row(
               children: [
-                Text(
+                const Text(
                   'Email : ',
                   style: TextStyle(
                     color: Colors.black,
@@ -41,7 +49,7 @@ class FormResultScreen extends StatelessWidget {
                     fontWeight: FontWeight.w500,
                   ),
                 ),
-                Text('yoesuv@hotmail.co.id'),
+                Text(args?.email ?? ''),
               ],
             ),
           ],

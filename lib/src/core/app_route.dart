@@ -28,7 +28,9 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: FormResultScreen.routeName,
-        builder: (context, state) => const FormResultScreen(),
+        builder: (context, state) => FormResultScreen(
+          args: state.extra as FormResultScreenArgs,
+        ),
       ),
     ],
   );

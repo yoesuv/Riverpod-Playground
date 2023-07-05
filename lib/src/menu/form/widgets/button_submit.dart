@@ -13,13 +13,20 @@ class ButtonSubmit extends ConsumerWidget {
     final isValid = ref.watch(
       formNotifier.select((state) => state.isFormValid),
     );
+    final fullName = ref.watch(
+      formNotifier.select((state) => state.fullName.value),
+    );
+    final email = ref.watch(
+      formNotifier.select((state) => state.email.value),
+    );
     return Padding(
       padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
       child: MyButton(
         isEnabled: isValid,
         label: 'Submit',
         onPressed: () {
-          context.push(FormResultScreen.routeName);
+          final data = FormResultScreenArgs(fullName: fullName, email: email);
+          context.push(FormResultScreen.routeName, extra: data);
         },
       ),
     );
