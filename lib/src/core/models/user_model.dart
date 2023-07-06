@@ -20,4 +20,8 @@ class UserModel with _$UserModel {
 
   factory UserModel.fromJson(Map<String, Object?> json) =>
       _$UserModelFromJson(json);
+
+  static List<UserModel> buildListFromJson(List<dynamic> json) {
+    return json.map((dynamic x) => UserModel.fromJson(x)).toList();
+  }
 }
