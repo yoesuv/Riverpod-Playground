@@ -13,6 +13,7 @@ Tools • Dart 3.0.5 • DevTools 2.23.1
 
 ### Libraries ###
 - [Build Runner](https://pub.dev/packages/build_runner)
+- [dio](https://pub.dev/packages/dio)
 - [Email Validator](https://pub.dev/packages/email_validator)
 - [Flutter Riverpod](https://pub.dev/packages/flutter_riverpod)
 - [Formz](https://pub.dev/packages/formz)
