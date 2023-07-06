@@ -1,12 +1,17 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_playground/src/menu/networking/networking_notifier.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
-class NetworkingScreen extends StatelessWidget {
+class NetworkingScreen extends ConsumerWidget {
   static const routeName = '/networking';
   const NetworkingScreen({super.key});
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
+    ref.read(networkNotifier.notifier).requestUsers();
+    final users =
+        ref.watch(networkNotifier.select((state) => state.users)) ?? [];
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
@@ -18,18 +23,19 @@ class NetworkingScreen extends StatelessWidget {
         child: ListView.separated(
           padding: const EdgeInsets.symmetric(vertical: 12),
           itemBuilder: (context, index) {
-            return const Padding(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 6),
+            return Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 6),
               child: Text(
-                'Lorem Ipsum',
-                style: TextStyle(
+                users[index].name ?? '',
+                style: const TextStyle(
+                  color: Colors.black,
                   fontSize: 16,
                 ),
               ),
             );
           },
           separatorBuilder: (context, index) => const Divider(),
-          itemCount: 5,
+          itemCount: users.length,
         ),
       ),
     );
