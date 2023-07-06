@@ -14,8 +14,23 @@ class NetworkingScreen extends StatelessWidget {
           label: 'Networking',
         ),
       ),
-      body: Center(
-        child: Text('Networking'),
+      body: SafeArea(
+        child: ListView.separated(
+          padding: const EdgeInsets.symmetric(vertical: 12),
+          itemBuilder: (context, index) {
+            return const Padding(
+              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 6),
+              child: Text(
+                'Lorem Ipsum',
+                style: TextStyle(
+                  fontSize: 16,
+                ),
+              ),
+            );
+          },
+          separatorBuilder: (context, index) => const Divider(),
+          itemCount: 5,
+        ),
       ),
     );
   }
