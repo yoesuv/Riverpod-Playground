@@ -5,6 +5,7 @@ import 'package:riverpod_playground/src/menu/counter/counter_screen.dart';
 import 'package:riverpod_playground/src/menu/form/form_result_screen.dart';
 import 'package:riverpod_playground/src/menu/form/form_screen.dart';
 import 'package:riverpod_playground/src/menu/home_screen.dart';
+import 'package:riverpod_playground/src/menu/networking/networking_screen.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
 
@@ -31,6 +32,10 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) => FormResultScreen(
           args: state.extra as FormResultScreenArgs,
         ),
+      ),
+      GoRoute(
+        path: NetworkingScreen.routeName,
+        builder: (context, state) => const NetworkingScreen(),
       ),
     ],
   );
