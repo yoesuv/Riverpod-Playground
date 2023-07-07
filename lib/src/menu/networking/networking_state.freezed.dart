@@ -16,6 +16,7 @@ final _privateConstructorUsedError = UnsupportedError(
 
 /// @nodoc
 mixin _$NetworkingState {
+  FormzSubmissionStatus get status => throw _privateConstructorUsedError;
   List<UserModel>? get users => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
@@ -29,7 +30,7 @@ abstract class $NetworkingStateCopyWith<$Res> {
           NetworkingState value, $Res Function(NetworkingState) then) =
       _$NetworkingStateCopyWithImpl<$Res, NetworkingState>;
   @useResult
-  $Res call({List<UserModel>? users});
+  $Res call({FormzSubmissionStatus status, List<UserModel>? users});
 }
 
 /// @nodoc
@@ -45,9 +46,14 @@ class _$NetworkingStateCopyWithImpl<$Res, $Val extends NetworkingState>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? status = null,
     Object? users = freezed,
   }) {
     return _then(_value.copyWith(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as FormzSubmissionStatus,
       users: freezed == users
           ? _value.users
           : users // ignore: cast_nullable_to_non_nullable
@@ -64,7 +70,7 @@ abstract class _$$_NetworkingStateCopyWith<$Res>
       __$$_NetworkingStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({List<UserModel>? users});
+  $Res call({FormzSubmissionStatus status, List<UserModel>? users});
 }
 
 /// @nodoc
@@ -78,9 +84,14 @@ class __$$_NetworkingStateCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
+    Object? status = null,
     Object? users = freezed,
   }) {
     return _then(_$_NetworkingState(
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as FormzSubmissionStatus,
       users: freezed == users
           ? _value._users
           : users // ignore: cast_nullable_to_non_nullable
@@ -92,8 +103,14 @@ class __$$_NetworkingStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_NetworkingState implements _NetworkingState {
-  const _$_NetworkingState({final List<UserModel>? users}) : _users = users;
+  const _$_NetworkingState(
+      {this.status = FormzSubmissionStatus.initial,
+      final List<UserModel>? users})
+      : _users = users;
 
+  @override
+  @JsonKey()
+  final FormzSubmissionStatus status;
   final List<UserModel>? _users;
   @override
   List<UserModel>? get users {
@@ -106,7 +123,7 @@ class _$_NetworkingState implements _NetworkingState {
 
   @override
   String toString() {
-    return 'NetworkingState(users: $users)';
+    return 'NetworkingState(status: $status, users: $users)';
   }
 
   @override
@@ -114,12 +131,13 @@ class _$_NetworkingState implements _NetworkingState {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_NetworkingState &&
+            (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._users, _users));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(_users));
+  int get hashCode => Object.hash(
+      runtimeType, status, const DeepCollectionEquality().hash(_users));
 
   @JsonKey(ignore: true)
   @override
@@ -129,9 +147,12 @@ class _$_NetworkingState implements _NetworkingState {
 }
 
 abstract class _NetworkingState implements NetworkingState {
-  const factory _NetworkingState({final List<UserModel>? users}) =
-      _$_NetworkingState;
+  const factory _NetworkingState(
+      {final FormzSubmissionStatus status,
+      final List<UserModel>? users}) = _$_NetworkingState;
 
+  @override
+  FormzSubmissionStatus get status;
   @override
   List<UserModel>? get users;
   @override
