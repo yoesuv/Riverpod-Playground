@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:riverpod_playground/src/widgets/my_button.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
 class PickerScreen extends StatelessWidget {
@@ -15,10 +16,48 @@ class PickerScreen extends StatelessWidget {
         ),
       ),
       body: SafeArea(
-        child: Center(
-          child: Text('Picker Screen'),
+        child: Column(
+          mainAxisSize: MainAxisSize.min,
+          crossAxisAlignment: CrossAxisAlignment.center,
+          children: [
+            SizedBox(height: 12),
+            SizedBox(
+              width: double.infinity,
+              height: 200,
+              child: _emptyImage(),
+            ),
+            SizedBox(height: 12),
+            Text(
+              'storage/nama_file.jpg',
+              style: TextStyle(
+                fontSize: 14,
+              ),
+            ),
+            SizedBox(height: 12),
+            Center(
+              child: MyButton(
+                label: 'Open Gallery',
+                onPressed: () {},
+              ),
+            ),
+          ],
         ),
       ),
     );
   }
+
+  Widget _emptyImage() {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12),
+      child: Container(
+        decoration: BoxDecoration(
+          border: Border.all(color: Colors.black),
+        ),
+        child: const Center(
+          child: Text('Select an Image'),
+        ),
+      ),
+    );
+  }
+
 }
