@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_playground/src/widgets/my_button.dart';
+import 'package:riverpod_playground/src/menu/picker/widgets/button_gallery.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
 class PickerScreen extends StatelessWidget {
@@ -35,10 +35,7 @@ class PickerScreen extends StatelessWidget {
             ),
             SizedBox(height: 12),
             Center(
-              child: MyButton(
-                label: 'Open Gallery',
-                onPressed: () {},
-              ),
+              child: ButtonGallery(),
             ),
           ],
         ),
@@ -59,5 +56,4 @@ class PickerScreen extends StatelessWidget {
       ),
     );
   }
-
 }
