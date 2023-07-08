@@ -34,7 +34,7 @@ class PickerNotifier extends StateNotifier<PickerState> {
     late PermissionStatus status;
     status = await Permission.photos.request();
     if (status == PermissionStatus.granted) {
-
+      debugPrint('PickerNotifier # open gallery iOS');
     }
   }
 }
