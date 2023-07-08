@@ -13,6 +13,7 @@ Tools • Dart 3.0.5 • DevTools 2.23.1
 
 ### Libraries ###
 - [Build Runner](https://pub.dev/packages/build_runner)
+- [Device Info Plus](https://pub.dev/packages/device_info_plus)
 - [dio](https://pub.dev/packages/dio)
 - [Email Validator](https://pub.dev/packages/email_validator)
 - [Flutter Riverpod](https://pub.dev/packages/flutter_riverpod)
@@ -22,4 +23,5 @@ Tools • Dart 3.0.5 • DevTools 2.23.1
 - [Go Router](https://pub.dev/packages/go_router)
 - [Json Annotation](https://pub.dev/packages/json_annotation)
 - [Json Serializable](https://pub.dev/packages/json_serializable)
+- [Permission Handler](https://pub.dev/packages/permission_handler)
 - [Stack Trace](https://pub.dev/packages/stack_trace)
