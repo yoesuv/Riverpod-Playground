@@ -43,8 +43,10 @@ class PickerNotifier extends StateNotifier<PickerState> {
       imageQuality: 90,
     );
     if (xFile != null) {
-      //imageFile.value = File(xFile.path);
       debugPrint('PickerNotifier # image path ${xFile.path}');
+      state = state.copyWith(
+        imageFile: File(xFile.path),
+      );
     }
   }
 }

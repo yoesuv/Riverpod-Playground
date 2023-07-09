@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_playground/src/menu/picker/widgets/button_gallery.dart';
+import 'package:riverpod_playground/src/menu/picker/widgets/content_image.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
 class PickerScreen extends StatelessWidget {
@@ -15,17 +16,13 @@ class PickerScreen extends StatelessWidget {
           label: 'Picker',
         ),
       ),
-      body: SafeArea(
+      body: const SafeArea(
         child: Column(
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
             SizedBox(height: 12),
-            SizedBox(
-              width: double.infinity,
-              height: 200,
-              child: _emptyImage(),
-            ),
+            ContentImage(),
             SizedBox(height: 12),
             Text(
               'storage/nama_file.jpg',
@@ -38,20 +35,6 @@ class PickerScreen extends StatelessWidget {
               child: ButtonGallery(),
             ),
           ],
-        ),
-      ),
-    );
-  }
-
-  Widget _emptyImage() {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 12),
-      child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
-        ),
-        child: const Center(
-          child: Text('Select an Image'),
         ),
       ),
     );
