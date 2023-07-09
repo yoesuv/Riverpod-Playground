@@ -1,6 +1,7 @@
 ## Personal Riverpod Playground ##
 
-A new Flutter project.
+Personal Flutter Riverpod playground.  
+Download apk file [here]()
 
 ```
 Flutter 3.10.5 • channel stable • https://github.com/flutter/flutter.git
@@ -21,6 +22,7 @@ Tools • Dart 3.0.5 • DevTools 2.23.1
 - [Freezed](https://pub.dev/packages/freezed)
 - [Freezed Annotation](https://pub.dev/packages/freezed_annotation)
 - [Go Router](https://pub.dev/packages/go_router)
+- [Image Picker](https://pub.dev/packages/image_picker)
 - [Json Annotation](https://pub.dev/packages/json_annotation)
 - [Json Serializable](https://pub.dev/packages/json_serializable)
 - [Permission Handler](https://pub.dev/packages/permission_handler)
