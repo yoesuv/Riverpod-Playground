@@ -21,8 +21,14 @@ class PickerNotifier extends StateNotifier<PickerState> {
     late PermissionStatus status;
     if (sdkInt < 33) {
       status = await Permission.storage.request();
+      state = state.copyWith(
+        status: status,
+      );
     } else {
       status = await Permission.photos.request();
+      state = state.copyWith(
+        status: status,
+      );
     }
     if (status == PermissionStatus.granted) {
       _openGallery();
@@ -32,6 +38,9 @@ class PickerNotifier extends StateNotifier<PickerState> {
   void openGalleryIos() async {
     late PermissionStatus status;
     status = await Permission.photos.request();
+    state = state.copyWith(
+      status: status,
+    );
     if (status == PermissionStatus.granted) {
       _openGallery();
     }

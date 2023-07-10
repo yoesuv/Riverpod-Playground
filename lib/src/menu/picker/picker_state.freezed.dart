@@ -17,6 +17,7 @@ final _privateConstructorUsedError = UnsupportedError(
 /// @nodoc
 mixin _$PickerState {
   File? get imageFile => throw _privateConstructorUsedError;
+  PermissionStatus get status => throw _privateConstructorUsedError;
 
   @JsonKey(ignore: true)
   $PickerStateCopyWith<PickerState> get copyWith =>
@@ -29,7 +30,7 @@ abstract class $PickerStateCopyWith<$Res> {
           PickerState value, $Res Function(PickerState) then) =
       _$PickerStateCopyWithImpl<$Res, PickerState>;
   @useResult
-  $Res call({File? imageFile});
+  $Res call({File? imageFile, PermissionStatus status});
 }
 
 /// @nodoc
@@ -46,12 +47,17 @@ class _$PickerStateCopyWithImpl<$Res, $Val extends PickerState>
   @override
   $Res call({
     Object? imageFile = freezed,
+    Object? status = null,
   }) {
     return _then(_value.copyWith(
       imageFile: freezed == imageFile
           ? _value.imageFile
           : imageFile // ignore: cast_nullable_to_non_nullable
               as File?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as PermissionStatus,
     ) as $Val);
   }
 }
@@ -64,7 +70,7 @@ abstract class _$$_PickerStateCopyWith<$Res>
       __$$_PickerStateCopyWithImpl<$Res>;
   @override
   @useResult
-  $Res call({File? imageFile});
+  $Res call({File? imageFile, PermissionStatus status});
 }
 
 /// @nodoc
@@ -79,12 +85,17 @@ class __$$_PickerStateCopyWithImpl<$Res>
   @override
   $Res call({
     Object? imageFile = freezed,
+    Object? status = null,
   }) {
     return _then(_$_PickerState(
       imageFile: freezed == imageFile
           ? _value.imageFile
           : imageFile // ignore: cast_nullable_to_non_nullable
               as File?,
+      status: null == status
+          ? _value.status
+          : status // ignore: cast_nullable_to_non_nullable
+              as PermissionStatus,
     ));
   }
 }
@@ -92,14 +103,17 @@ class __$$_PickerStateCopyWithImpl<$Res>
 /// @nodoc
 
 class _$_PickerState implements _PickerState {
-  const _$_PickerState({this.imageFile});
+  const _$_PickerState({this.imageFile, this.status = PermissionStatus.denied});
 
   @override
   final File? imageFile;
+  @override
+  @JsonKey()
+  final PermissionStatus status;
 
   @override
   String toString() {
-    return 'PickerState(imageFile: $imageFile)';
+    return 'PickerState(imageFile: $imageFile, status: $status)';
   }
 
   @override
@@ -108,11 +122,12 @@ class _$_PickerState implements _PickerState {
         (other.runtimeType == runtimeType &&
             other is _$_PickerState &&
             (identical(other.imageFile, imageFile) ||
-                other.imageFile == imageFile));
+                other.imageFile == imageFile) &&
+            (identical(other.status, status) || other.status == status));
   }
 
   @override
-  int get hashCode => Object.hash(runtimeType, imageFile);
+  int get hashCode => Object.hash(runtimeType, imageFile, status);
 
   @JsonKey(ignore: true)
   @override
@@ -122,10 +137,13 @@ class _$_PickerState implements _PickerState {
 }
 
 abstract class _PickerState implements PickerState {
-  const factory _PickerState({final File? imageFile}) = _$_PickerState;
+  const factory _PickerState(
+      {final File? imageFile, final PermissionStatus status}) = _$_PickerState;
 
   @override
   File? get imageFile;
+  @override
+  PermissionStatus get status;
   @override
   @JsonKey(ignore: true)
   _$$_PickerStateCopyWith<_$_PickerState> get copyWith =>

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:riverpod_playground/src/menu/picker/widgets/button_gallery.dart';
 import 'package:riverpod_playground/src/menu/picker/widgets/content_image.dart';
+import 'package:riverpod_playground/src/menu/picker/widgets/label_permission_status.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
 class PickerScreen extends StatelessWidget {
@@ -24,12 +25,7 @@ class PickerScreen extends StatelessWidget {
             SizedBox(height: 12),
             ContentImage(),
             SizedBox(height: 12),
-            Text(
-              'storage/nama_file.jpg',
-              style: TextStyle(
-                fontSize: 14,
-              ),
-            ),
+            LabelPermissionStatus(),
             SizedBox(height: 12),
             Center(
               child: ButtonGallery(),
