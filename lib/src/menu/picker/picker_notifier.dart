@@ -15,6 +15,23 @@ final pickerNotifier =
 class PickerNotifier extends StateNotifier<PickerState> {
   PickerNotifier(super._state);
 
+  void checkPermissionStatus() async {
+    final androidInfo = await DeviceInfoPlugin().androidInfo;
+    final sdkInt = androidInfo.version.sdkInt;
+    late PermissionStatus status;
+    if (sdkInt < 33) {
+      status = await Permission.storage.status;
+      state = state.copyWith(
+        status: status,
+      );
+    } else {
+      status = await Permission.photos.status;
+      state = state.copyWith(
+        status: status,
+      );
+    }
+  }
+
   void openGalleryAndroid() async {
     final androidInfo = await DeviceInfoPlugin().androidInfo;
     final sdkInt = androidInfo.version.sdkInt;

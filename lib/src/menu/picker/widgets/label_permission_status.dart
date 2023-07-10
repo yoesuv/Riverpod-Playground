@@ -8,6 +8,7 @@ class LabelPermissionStatus extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final status = ref.watch(pickerNotifier.select((state) => state.status));
+    ref.read(pickerNotifier.notifier).checkPermissionStatus();
     return Text(
       'Permission Status : ${status.name}',
       style: const TextStyle(
