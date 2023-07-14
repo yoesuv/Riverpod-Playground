@@ -15,4 +15,8 @@ class PostModel with _$PostModel {
   factory PostModel.fromJson(Map<String, Object?> json) =>
       _$PostModelFromJson(json);
 
+  static List<PostModel> buildListFromJson(List<dynamic> json) {
+    return json.map((dynamic i) => PostModel.fromJson(i)).toList();
+  }
+
 }
