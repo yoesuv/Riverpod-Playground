@@ -15,6 +15,8 @@ class ContentPagination extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final posts =
         ref.watch(paginationNotifier.select((state) => state.posts)) ?? [];
+    final hasReachedMax =
+        ref.watch(paginationNotifier.select((state) => state.hasReachedMax));
     return posts.isEmpty
         ? const Center(
             child: CircularProgressIndicator(),
@@ -26,16 +28,34 @@ class ContentPagination extends ConsumerWidget {
               if (index < posts.length) {
                 return ItemPost(postModel: posts[index]);
               } else {
-                return const Padding(
-                  padding: EdgeInsets.symmetric(vertical: 6),
-                  child: Center(
-                    child: CircularProgressIndicator(),
-                  ),
-                );
+                return hasReachedMax ? _endLoad() : _loadMore();
               }
             },
             separatorBuilder: (context, index) => const Divider(),
             itemCount: posts.length + 1,
           );
+  }
+
+  Widget _loadMore() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: 6),
+      child: Center(
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+
+  Widget _endLoad() {
+    return const Padding(
+      padding: EdgeInsets.symmetric(vertical: 6),
+      child: Center(
+        child: Text(
+          'All data loaded',
+          style: TextStyle(
+            fontSize: 14,
+          ),
+        ),
+      ),
+    );
   }
 }
