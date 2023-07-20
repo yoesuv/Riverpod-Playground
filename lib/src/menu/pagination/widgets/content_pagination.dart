@@ -16,14 +16,18 @@ class ContentPagination extends ConsumerWidget {
     ref.read(paginationNotifier.notifier).initPagination();
     final posts =
         ref.watch(paginationNotifier.select((state) => state.posts)) ?? [];
-    return ListView.separated(
-      controller: scrollController,
-      padding: const EdgeInsets.symmetric(vertical: 12),
-      itemBuilder: (context, index) {
-        return const ItemPost();
-      },
-      separatorBuilder: (context, index) => const Divider(),
-      itemCount: posts.length,
-    );
+    return posts.isEmpty
+        ? const Center(
+            child: CircularProgressIndicator(),
+          )
+        : ListView.separated(
+            controller: scrollController,
+            padding: const EdgeInsets.symmetric(vertical: 12),
+            itemBuilder: (context, index) {
+              return const ItemPost();
+            },
+            separatorBuilder: (context, index) => const Divider(),
+            itemCount: posts.length,
+          );
   }
 }
