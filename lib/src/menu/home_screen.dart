@@ -3,6 +3,7 @@ import 'package:go_router/go_router.dart';
 import 'package:riverpod_playground/src/menu/counter/counter_screen.dart';
 import 'package:riverpod_playground/src/menu/form/form_screen.dart';
 import 'package:riverpod_playground/src/menu/networking/networking_screen.dart';
+import 'package:riverpod_playground/src/menu/pagination/pagination_screen.dart';
 import 'package:riverpod_playground/src/menu/picker/picker_screen.dart';
 import 'package:riverpod_playground/src/widgets/my_button.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
@@ -58,6 +59,15 @@ class HomeScreen extends StatelessWidget {
                     label: 'Picker',
                     onPressed: () {
                       context.push(PickerScreen.routeName);
+                    },
+                  ),
+                ),
+                const SizedBox(height: 8),
+                Center(
+                  child: MyButton(
+                    label: 'Pagination',
+                    onPressed: () {
+                      context.push(PaginationScreen.routeName);
                     },
                   ),
                 ),

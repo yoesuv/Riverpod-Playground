@@ -6,6 +6,7 @@ import 'package:riverpod_playground/src/menu/form/form_result_screen.dart';
 import 'package:riverpod_playground/src/menu/form/form_screen.dart';
 import 'package:riverpod_playground/src/menu/home_screen.dart';
 import 'package:riverpod_playground/src/menu/networking/networking_screen.dart';
+import 'package:riverpod_playground/src/menu/pagination/pagination_screen.dart';
 import 'package:riverpod_playground/src/menu/picker/picker_screen.dart';
 
 final navigatorKey = GlobalKey<NavigatorState>();
@@ -41,6 +42,10 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: PickerScreen.routeName,
         builder: (context, state) => const PickerScreen(),
+      ),
+      GoRoute(
+        path: PaginationScreen.routeName,
+        builder: (context, state) => const PaginationScreen(),
       ),
     ],
   );
