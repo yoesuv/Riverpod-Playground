@@ -27,3 +27,6 @@ Tools • Dart 3.0.5 • DevTools 2.23.1
 - [Json Serializable](https://pub.dev/packages/json_serializable)
 - [Permission Handler](https://pub.dev/packages/permission_handler)
 - [Stack Trace](https://pub.dev/packages/stack_trace)
+
+### References ###
+- [Youtube](https://www.youtube.com/watch?v=FdsqU02xwsE)
