@@ -13,7 +13,6 @@ class ContentPagination extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.read(paginationNotifier.notifier).initPagination();
     final posts =
         ref.watch(paginationNotifier.select((state) => state.posts)) ?? [];
     return posts.isEmpty
@@ -24,10 +23,19 @@ class ContentPagination extends ConsumerWidget {
             controller: scrollController,
             padding: const EdgeInsets.symmetric(vertical: 12),
             itemBuilder: (context, index) {
-              return const ItemPost();
+              if (index < posts.length) {
+                return const ItemPost();
+              } else {
+                return const Padding(
+                  padding: EdgeInsets.symmetric(vertical: 6),
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              }
             },
             separatorBuilder: (context, index) => const Divider(),
-            itemCount: posts.length,
+            itemCount: posts.length + 1,
           );
   }
 }

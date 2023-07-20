@@ -1,24 +1,27 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_playground/src/menu/pagination/pagination_notifier.dart';
 import 'package:riverpod_playground/src/menu/pagination/widgets/content_pagination.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
-class PaginationScreen extends StatefulWidget {
+class PaginationScreen extends ConsumerStatefulWidget {
   static const routeName = '/pagination';
 
   const PaginationScreen({super.key});
 
   @override
-  State<StatefulWidget> createState() {
+  ConsumerState<ConsumerStatefulWidget> createState() {
     return _PaginationScreenState();
   }
 }
 
-class _PaginationScreenState extends State<PaginationScreen> {
+class _PaginationScreenState extends ConsumerState<PaginationScreen> {
   final _controller = ScrollController();
 
   @override
   void initState() {
     super.initState();
+    ref.read(paginationNotifier.notifier).initPagination();
     _controller.addListener(() {
       if (_controller.position.maxScrollExtent == _controller.offset) {
         debugPrint('PaginationScreen # end off list');
