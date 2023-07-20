@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:riverpod_playground/src/menu/pagination/widgets/item_post.dart';
+import 'package:riverpod_playground/src/menu/pagination/widgets/content_pagination.dart';
 import 'package:riverpod_playground/src/widgets/title_app_bar.dart';
 
 class PaginationScreen extends StatefulWidget {
@@ -36,14 +36,8 @@ class _PaginationScreenState extends State<PaginationScreen> {
         ),
       ),
       body: SafeArea(
-        child: ListView.separated(
-          controller: _controller,
-          padding: const EdgeInsets.symmetric(vertical: 12),
-          itemBuilder: (context, index) {
-            return const ItemPost();
-          },
-          separatorBuilder: (context, index) => const Divider(),
-          itemCount: 15,
+        child: ContentPagination(
+          scrollController: _controller,
         ),
       ),
     );

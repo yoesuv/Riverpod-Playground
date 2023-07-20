@@ -3,11 +3,26 @@ import 'package:formz/formz.dart';
 import 'package:riverpod_playground/src/core/repositories/post_repository.dart';
 import 'package:riverpod_playground/src/menu/pagination/pagination_state.dart';
 
+final paginationNotifier =
+    StateNotifierProvider.autoDispose<PaginationNotifier, PaginationState>(
+        (ref) {
+  return PaginationNotifier(const PaginationState());
+});
+
 class PaginationNotifier extends StateNotifier<PaginationState> {
   PaginationNotifier(super._state);
 
   final repoPost = PostRepository();
-  
+
+  void initPagination() async {
+    final posts = await repoPost.getListPost(0);
+    state = state.copyWith(
+      status: FormzSubmissionStatus.success,
+      posts: posts,
+      hasReachedMax: false,
+    );
+  }
+
   Future<void> onPostFetched() async {
     if (state.hasReachedMax) return;
     try {
