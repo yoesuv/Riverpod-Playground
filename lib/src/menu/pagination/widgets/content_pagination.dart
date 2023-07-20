@@ -24,7 +24,7 @@ class ContentPagination extends ConsumerWidget {
             padding: const EdgeInsets.symmetric(vertical: 12),
             itemBuilder: (context, index) {
               if (index < posts.length) {
-                return const ItemPost();
+                return ItemPost(postModel: posts[index]);
               } else {
                 return const Padding(
                   padding: EdgeInsets.symmetric(vertical: 6),

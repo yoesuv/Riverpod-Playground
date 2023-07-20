@@ -21,10 +21,10 @@ class _PaginationScreenState extends ConsumerState<PaginationScreen> {
   @override
   void initState() {
     super.initState();
-    ref.read(paginationNotifier.notifier).initPagination();
+    ref.read(paginationNotifier.notifier).loadInitialPosts();
     _controller.addListener(() {
       if (_controller.position.maxScrollExtent == _controller.offset) {
-        debugPrint('PaginationScreen # end off list');
+        ref.read(paginationNotifier.notifier).loadOtherPosts();
       }
     });
   }

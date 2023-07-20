@@ -14,26 +14,25 @@ class PaginationNotifier extends StateNotifier<PaginationState> {
 
   final repoPost = PostRepository();
 
-  void initPagination() async {
-    final posts = await repoPost.getListPost(0);
-    state = state.copyWith(
-      status: FormzSubmissionStatus.success,
-      posts: posts,
-      hasReachedMax: false,
-    );
+  void loadInitialPosts() async {
+    try {
+      final posts = await repoPost.getListPost(0);
+      state = state.copyWith(
+        status: FormzSubmissionStatus.success,
+        posts: posts,
+        hasReachedMax: false,
+      );
+    } catch (e) {
+      state = state.copyWith(
+        posts: [],
+        status: FormzSubmissionStatus.failure,
+      );
+    }
   }
 
-  Future<void> onPostFetched() async {
+  void loadOtherPosts() async {
     if (state.hasReachedMax) return;
     try {
-      if (state.status == FormzSubmissionStatus.initial) {
-        final posts = await repoPost.getListPost(0);
-        state = state.copyWith(
-          status: FormzSubmissionStatus.success,
-          posts: posts,
-          hasReachedMax: false,
-        );
-      }
       final posts = await repoPost.getListPost(state.posts?.length ?? 0);
       if (posts.isEmpty) {
         state = state.copyWith(
