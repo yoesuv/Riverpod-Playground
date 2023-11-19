@@ -44,7 +44,7 @@ dependencies:
   go_router: ^12.1.1
   image_picker: ^1.0.4
   json_annotation: ^4.8.1
-  permission_handler: ^10.4.2
+  permission_handler: ^11.0.1
   stack_trace: ^1.11.0
 
 dev_dependencies:
