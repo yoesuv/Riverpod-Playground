@@ -67,21 +67,22 @@ class _$GeoModelCopyWithImpl<$Res, $Val extends GeoModel>
 }
 
 /// @nodoc
-abstract class _$$_GeoModelCopyWith<$Res> implements $GeoModelCopyWith<$Res> {
-  factory _$$_GeoModelCopyWith(
-          _$_GeoModel value, $Res Function(_$_GeoModel) then) =
-      __$$_GeoModelCopyWithImpl<$Res>;
+abstract class _$$GeoModelImplCopyWith<$Res>
+    implements $GeoModelCopyWith<$Res> {
+  factory _$$GeoModelImplCopyWith(
+          _$GeoModelImpl value, $Res Function(_$GeoModelImpl) then) =
+      __$$GeoModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? lat, String? lng});
 }
 
 /// @nodoc
-class __$$_GeoModelCopyWithImpl<$Res>
-    extends _$GeoModelCopyWithImpl<$Res, _$_GeoModel>
-    implements _$$_GeoModelCopyWith<$Res> {
-  __$$_GeoModelCopyWithImpl(
-      _$_GeoModel _value, $Res Function(_$_GeoModel) _then)
+class __$$GeoModelImplCopyWithImpl<$Res>
+    extends _$GeoModelCopyWithImpl<$Res, _$GeoModelImpl>
+    implements _$$GeoModelImplCopyWith<$Res> {
+  __$$GeoModelImplCopyWithImpl(
+      _$GeoModelImpl _value, $Res Function(_$GeoModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -90,7 +91,7 @@ class __$$_GeoModelCopyWithImpl<$Res>
     Object? lat = freezed,
     Object? lng = freezed,
   }) {
-    return _then(_$_GeoModel(
+    return _then(_$GeoModelImpl(
       lat: freezed == lat
           ? _value.lat
           : lat // ignore: cast_nullable_to_non_nullable
@@ -105,11 +106,11 @@ class __$$_GeoModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_GeoModel implements _GeoModel {
-  const _$_GeoModel({this.lat, this.lng});
+class _$GeoModelImpl implements _GeoModel {
+  const _$GeoModelImpl({this.lat, this.lng});
 
-  factory _$_GeoModel.fromJson(Map<String, dynamic> json) =>
-      _$$_GeoModelFromJson(json);
+  factory _$GeoModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$GeoModelImplFromJson(json);
 
   @override
   final String? lat;
@@ -125,7 +126,7 @@ class _$_GeoModel implements _GeoModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_GeoModel &&
+            other is _$GeoModelImpl &&
             (identical(other.lat, lat) || other.lat == lat) &&
             (identical(other.lng, lng) || other.lng == lng));
   }
@@ -137,21 +138,23 @@ class _$_GeoModel implements _GeoModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_GeoModelCopyWith<_$_GeoModel> get copyWith =>
-      __$$_GeoModelCopyWithImpl<_$_GeoModel>(this, _$identity);
+  _$$GeoModelImplCopyWith<_$GeoModelImpl> get copyWith =>
+      __$$GeoModelImplCopyWithImpl<_$GeoModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_GeoModelToJson(
+    return _$$GeoModelImplToJson(
       this,
     );
   }
 }
 
 abstract class _GeoModel implements GeoModel {
-  const factory _GeoModel({final String? lat, final String? lng}) = _$_GeoModel;
+  const factory _GeoModel({final String? lat, final String? lng}) =
+      _$GeoModelImpl;
 
-  factory _GeoModel.fromJson(Map<String, dynamic> json) = _$_GeoModel.fromJson;
+  factory _GeoModel.fromJson(Map<String, dynamic> json) =
+      _$GeoModelImpl.fromJson;
 
   @override
   String? get lat;
@@ -159,6 +162,6 @@ abstract class _GeoModel implements GeoModel {
   String? get lng;
   @override
   @JsonKey(ignore: true)
-  _$$_GeoModelCopyWith<_$_GeoModel> get copyWith =>
+  _$$GeoModelImplCopyWith<_$GeoModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

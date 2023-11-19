@@ -72,11 +72,11 @@ class _$PaginationStateCopyWithImpl<$Res, $Val extends PaginationState>
 }
 
 /// @nodoc
-abstract class _$$_PaginationStateCopyWith<$Res>
+abstract class _$$PaginationStateImplCopyWith<$Res>
     implements $PaginationStateCopyWith<$Res> {
-  factory _$$_PaginationStateCopyWith(
-          _$_PaginationState value, $Res Function(_$_PaginationState) then) =
-      __$$_PaginationStateCopyWithImpl<$Res>;
+  factory _$$PaginationStateImplCopyWith(_$PaginationStateImpl value,
+          $Res Function(_$PaginationStateImpl) then) =
+      __$$PaginationStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -86,11 +86,11 @@ abstract class _$$_PaginationStateCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_PaginationStateCopyWithImpl<$Res>
-    extends _$PaginationStateCopyWithImpl<$Res, _$_PaginationState>
-    implements _$$_PaginationStateCopyWith<$Res> {
-  __$$_PaginationStateCopyWithImpl(
-      _$_PaginationState _value, $Res Function(_$_PaginationState) _then)
+class __$$PaginationStateImplCopyWithImpl<$Res>
+    extends _$PaginationStateCopyWithImpl<$Res, _$PaginationStateImpl>
+    implements _$$PaginationStateImplCopyWith<$Res> {
+  __$$PaginationStateImplCopyWithImpl(
+      _$PaginationStateImpl _value, $Res Function(_$PaginationStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -100,7 +100,7 @@ class __$$_PaginationStateCopyWithImpl<$Res>
     Object? posts = freezed,
     Object? hasReachedMax = null,
   }) {
-    return _then(_$_PaginationState(
+    return _then(_$PaginationStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -119,8 +119,8 @@ class __$$_PaginationStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PaginationState implements _PaginationState {
-  const _$_PaginationState(
+class _$PaginationStateImpl implements _PaginationState {
+  const _$PaginationStateImpl(
       {this.status = FormzSubmissionStatus.initial,
       final List<PostModel>? posts = const <PostModel>[],
       this.hasReachedMax = false})
@@ -153,7 +153,7 @@ class _$_PaginationState implements _PaginationState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PaginationState &&
+            other is _$PaginationStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._posts, _posts) &&
             (identical(other.hasReachedMax, hasReachedMax) ||
@@ -167,15 +167,16 @@ class _$_PaginationState implements _PaginationState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PaginationStateCopyWith<_$_PaginationState> get copyWith =>
-      __$$_PaginationStateCopyWithImpl<_$_PaginationState>(this, _$identity);
+  _$$PaginationStateImplCopyWith<_$PaginationStateImpl> get copyWith =>
+      __$$PaginationStateImplCopyWithImpl<_$PaginationStateImpl>(
+          this, _$identity);
 }
 
 abstract class _PaginationState implements PaginationState {
   const factory _PaginationState(
       {final FormzSubmissionStatus status,
       final List<PostModel>? posts,
-      final bool hasReachedMax}) = _$_PaginationState;
+      final bool hasReachedMax}) = _$PaginationStateImpl;
 
   @override
   FormzSubmissionStatus get status;
@@ -185,6 +186,6 @@ abstract class _PaginationState implements PaginationState {
   bool get hasReachedMax;
   @override
   @JsonKey(ignore: true)
-  _$$_PaginationStateCopyWith<_$_PaginationState> get copyWith =>
+  _$$PaginationStateImplCopyWith<_$PaginationStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
