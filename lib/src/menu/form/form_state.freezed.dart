@@ -85,10 +85,11 @@ class _$FormStateCopyWithImpl<$Res, $Val extends FormState>
 }
 
 /// @nodoc
-abstract class _$$_FormStateCopyWith<$Res> implements $FormStateCopyWith<$Res> {
-  factory _$$_FormStateCopyWith(
-          _$_FormState value, $Res Function(_$_FormState) then) =
-      __$$_FormStateCopyWithImpl<$Res>;
+abstract class _$$FormStateImplCopyWith<$Res>
+    implements $FormStateCopyWith<$Res> {
+  factory _$$FormStateImplCopyWith(
+          _$FormStateImpl value, $Res Function(_$FormStateImpl) then) =
+      __$$FormStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call(
@@ -100,11 +101,11 @@ abstract class _$$_FormStateCopyWith<$Res> implements $FormStateCopyWith<$Res> {
 }
 
 /// @nodoc
-class __$$_FormStateCopyWithImpl<$Res>
-    extends _$FormStateCopyWithImpl<$Res, _$_FormState>
-    implements _$$_FormStateCopyWith<$Res> {
-  __$$_FormStateCopyWithImpl(
-      _$_FormState _value, $Res Function(_$_FormState) _then)
+class __$$FormStateImplCopyWithImpl<$Res>
+    extends _$FormStateCopyWithImpl<$Res, _$FormStateImpl>
+    implements _$$FormStateImplCopyWith<$Res> {
+  __$$FormStateImplCopyWithImpl(
+      _$FormStateImpl _value, $Res Function(_$FormStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -116,7 +117,7 @@ class __$$_FormStateCopyWithImpl<$Res>
     Object? fullNameError = freezed,
     Object? emailError = freezed,
   }) {
-    return _then(_$_FormState(
+    return _then(_$FormStateImpl(
       fullName: null == fullName
           ? _value.fullName
           : fullName // ignore: cast_nullable_to_non_nullable
@@ -143,8 +144,8 @@ class __$$_FormStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_FormState implements _FormState {
-  const _$_FormState(
+class _$FormStateImpl implements _FormState {
+  const _$FormStateImpl(
       {this.fullName = const FullName.pure(),
       this.email = const Email.pure(),
       this.isFormValid = false,
@@ -174,7 +175,7 @@ class _$_FormState implements _FormState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_FormState &&
+            other is _$FormStateImpl &&
             (identical(other.fullName, fullName) ||
                 other.fullName == fullName) &&
             (identical(other.email, email) || other.email == email) &&
@@ -193,8 +194,8 @@ class _$_FormState implements _FormState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_FormStateCopyWith<_$_FormState> get copyWith =>
-      __$$_FormStateCopyWithImpl<_$_FormState>(this, _$identity);
+  _$$FormStateImplCopyWith<_$FormStateImpl> get copyWith =>
+      __$$FormStateImplCopyWithImpl<_$FormStateImpl>(this, _$identity);
 }
 
 abstract class _FormState implements FormState {
@@ -203,7 +204,7 @@ abstract class _FormState implements FormState {
       final Email email,
       final bool isFormValid,
       final String? fullNameError,
-      final String? emailError}) = _$_FormState;
+      final String? emailError}) = _$FormStateImpl;
 
   @override
   FullName get fullName;
@@ -217,6 +218,6 @@ abstract class _FormState implements FormState {
   String? get emailError;
   @override
   @JsonKey(ignore: true)
-  _$$_FormStateCopyWith<_$_FormState> get copyWith =>
+  _$$FormStateImplCopyWith<_$FormStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

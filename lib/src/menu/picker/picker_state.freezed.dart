@@ -63,22 +63,22 @@ class _$PickerStateCopyWithImpl<$Res, $Val extends PickerState>
 }
 
 /// @nodoc
-abstract class _$$_PickerStateCopyWith<$Res>
+abstract class _$$PickerStateImplCopyWith<$Res>
     implements $PickerStateCopyWith<$Res> {
-  factory _$$_PickerStateCopyWith(
-          _$_PickerState value, $Res Function(_$_PickerState) then) =
-      __$$_PickerStateCopyWithImpl<$Res>;
+  factory _$$PickerStateImplCopyWith(
+          _$PickerStateImpl value, $Res Function(_$PickerStateImpl) then) =
+      __$$PickerStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({File? imageFile, PermissionStatus status});
 }
 
 /// @nodoc
-class __$$_PickerStateCopyWithImpl<$Res>
-    extends _$PickerStateCopyWithImpl<$Res, _$_PickerState>
-    implements _$$_PickerStateCopyWith<$Res> {
-  __$$_PickerStateCopyWithImpl(
-      _$_PickerState _value, $Res Function(_$_PickerState) _then)
+class __$$PickerStateImplCopyWithImpl<$Res>
+    extends _$PickerStateCopyWithImpl<$Res, _$PickerStateImpl>
+    implements _$$PickerStateImplCopyWith<$Res> {
+  __$$PickerStateImplCopyWithImpl(
+      _$PickerStateImpl _value, $Res Function(_$PickerStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_PickerStateCopyWithImpl<$Res>
     Object? imageFile = freezed,
     Object? status = null,
   }) {
-    return _then(_$_PickerState(
+    return _then(_$PickerStateImpl(
       imageFile: freezed == imageFile
           ? _value.imageFile
           : imageFile // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,9 @@ class __$$_PickerStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_PickerState implements _PickerState {
-  const _$_PickerState({this.imageFile, this.status = PermissionStatus.denied});
+class _$PickerStateImpl implements _PickerState {
+  const _$PickerStateImpl(
+      {this.imageFile, this.status = PermissionStatus.denied});
 
   @override
   final File? imageFile;
@@ -120,7 +121,7 @@ class _$_PickerState implements _PickerState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_PickerState &&
+            other is _$PickerStateImpl &&
             (identical(other.imageFile, imageFile) ||
                 other.imageFile == imageFile) &&
             (identical(other.status, status) || other.status == status));
@@ -132,13 +133,14 @@ class _$_PickerState implements _PickerState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_PickerStateCopyWith<_$_PickerState> get copyWith =>
-      __$$_PickerStateCopyWithImpl<_$_PickerState>(this, _$identity);
+  _$$PickerStateImplCopyWith<_$PickerStateImpl> get copyWith =>
+      __$$PickerStateImplCopyWithImpl<_$PickerStateImpl>(this, _$identity);
 }
 
 abstract class _PickerState implements PickerState {
   const factory _PickerState(
-      {final File? imageFile, final PermissionStatus status}) = _$_PickerState;
+      {final File? imageFile,
+      final PermissionStatus status}) = _$PickerStateImpl;
 
   @override
   File? get imageFile;
@@ -146,6 +148,6 @@ abstract class _PickerState implements PickerState {
   PermissionStatus get status;
   @override
   @JsonKey(ignore: true)
-  _$$_PickerStateCopyWith<_$_PickerState> get copyWith =>
+  _$$PickerStateImplCopyWith<_$PickerStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

@@ -63,22 +63,22 @@ class _$NetworkingStateCopyWithImpl<$Res, $Val extends NetworkingState>
 }
 
 /// @nodoc
-abstract class _$$_NetworkingStateCopyWith<$Res>
+abstract class _$$NetworkingStateImplCopyWith<$Res>
     implements $NetworkingStateCopyWith<$Res> {
-  factory _$$_NetworkingStateCopyWith(
-          _$_NetworkingState value, $Res Function(_$_NetworkingState) then) =
-      __$$_NetworkingStateCopyWithImpl<$Res>;
+  factory _$$NetworkingStateImplCopyWith(_$NetworkingStateImpl value,
+          $Res Function(_$NetworkingStateImpl) then) =
+      __$$NetworkingStateImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({FormzSubmissionStatus status, List<UserModel>? users});
 }
 
 /// @nodoc
-class __$$_NetworkingStateCopyWithImpl<$Res>
-    extends _$NetworkingStateCopyWithImpl<$Res, _$_NetworkingState>
-    implements _$$_NetworkingStateCopyWith<$Res> {
-  __$$_NetworkingStateCopyWithImpl(
-      _$_NetworkingState _value, $Res Function(_$_NetworkingState) _then)
+class __$$NetworkingStateImplCopyWithImpl<$Res>
+    extends _$NetworkingStateCopyWithImpl<$Res, _$NetworkingStateImpl>
+    implements _$$NetworkingStateImplCopyWith<$Res> {
+  __$$NetworkingStateImplCopyWithImpl(
+      _$NetworkingStateImpl _value, $Res Function(_$NetworkingStateImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -87,7 +87,7 @@ class __$$_NetworkingStateCopyWithImpl<$Res>
     Object? status = null,
     Object? users = freezed,
   }) {
-    return _then(_$_NetworkingState(
+    return _then(_$NetworkingStateImpl(
       status: null == status
           ? _value.status
           : status // ignore: cast_nullable_to_non_nullable
@@ -102,8 +102,8 @@ class __$$_NetworkingStateCopyWithImpl<$Res>
 
 /// @nodoc
 
-class _$_NetworkingState implements _NetworkingState {
-  const _$_NetworkingState(
+class _$NetworkingStateImpl implements _NetworkingState {
+  const _$NetworkingStateImpl(
       {this.status = FormzSubmissionStatus.initial,
       final List<UserModel>? users})
       : _users = users;
@@ -130,7 +130,7 @@ class _$_NetworkingState implements _NetworkingState {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_NetworkingState &&
+            other is _$NetworkingStateImpl &&
             (identical(other.status, status) || other.status == status) &&
             const DeepCollectionEquality().equals(other._users, _users));
   }
@@ -142,14 +142,15 @@ class _$_NetworkingState implements _NetworkingState {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_NetworkingStateCopyWith<_$_NetworkingState> get copyWith =>
-      __$$_NetworkingStateCopyWithImpl<_$_NetworkingState>(this, _$identity);
+  _$$NetworkingStateImplCopyWith<_$NetworkingStateImpl> get copyWith =>
+      __$$NetworkingStateImplCopyWithImpl<_$NetworkingStateImpl>(
+          this, _$identity);
 }
 
 abstract class _NetworkingState implements NetworkingState {
   const factory _NetworkingState(
       {final FormzSubmissionStatus status,
-      final List<UserModel>? users}) = _$_NetworkingState;
+      final List<UserModel>? users}) = _$NetworkingStateImpl;
 
   @override
   FormzSubmissionStatus get status;
@@ -157,6 +158,6 @@ abstract class _NetworkingState implements NetworkingState {
   List<UserModel>? get users;
   @override
   @JsonKey(ignore: true)
-  _$$_NetworkingStateCopyWith<_$_NetworkingState> get copyWith =>
+  _$$NetworkingStateImplCopyWith<_$NetworkingStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

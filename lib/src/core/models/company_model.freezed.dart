@@ -74,22 +74,22 @@ class _$CompanyModelCopyWithImpl<$Res, $Val extends CompanyModel>
 }
 
 /// @nodoc
-abstract class _$$_CompanyModelCopyWith<$Res>
+abstract class _$$CompanyModelImplCopyWith<$Res>
     implements $CompanyModelCopyWith<$Res> {
-  factory _$$_CompanyModelCopyWith(
-          _$_CompanyModel value, $Res Function(_$_CompanyModel) then) =
-      __$$_CompanyModelCopyWithImpl<$Res>;
+  factory _$$CompanyModelImplCopyWith(
+          _$CompanyModelImpl value, $Res Function(_$CompanyModelImpl) then) =
+      __$$CompanyModelImplCopyWithImpl<$Res>;
   @override
   @useResult
   $Res call({String? name, String? catchPhrase, String? bs});
 }
 
 /// @nodoc
-class __$$_CompanyModelCopyWithImpl<$Res>
-    extends _$CompanyModelCopyWithImpl<$Res, _$_CompanyModel>
-    implements _$$_CompanyModelCopyWith<$Res> {
-  __$$_CompanyModelCopyWithImpl(
-      _$_CompanyModel _value, $Res Function(_$_CompanyModel) _then)
+class __$$CompanyModelImplCopyWithImpl<$Res>
+    extends _$CompanyModelCopyWithImpl<$Res, _$CompanyModelImpl>
+    implements _$$CompanyModelImplCopyWith<$Res> {
+  __$$CompanyModelImplCopyWithImpl(
+      _$CompanyModelImpl _value, $Res Function(_$CompanyModelImpl) _then)
       : super(_value, _then);
 
   @pragma('vm:prefer-inline')
@@ -99,7 +99,7 @@ class __$$_CompanyModelCopyWithImpl<$Res>
     Object? catchPhrase = freezed,
     Object? bs = freezed,
   }) {
-    return _then(_$_CompanyModel(
+    return _then(_$CompanyModelImpl(
       name: freezed == name
           ? _value.name
           : name // ignore: cast_nullable_to_non_nullable
@@ -118,11 +118,11 @@ class __$$_CompanyModelCopyWithImpl<$Res>
 
 /// @nodoc
 @JsonSerializable()
-class _$_CompanyModel implements _CompanyModel {
-  const _$_CompanyModel({this.name, this.catchPhrase, this.bs});
+class _$CompanyModelImpl implements _CompanyModel {
+  const _$CompanyModelImpl({this.name, this.catchPhrase, this.bs});
 
-  factory _$_CompanyModel.fromJson(Map<String, dynamic> json) =>
-      _$$_CompanyModelFromJson(json);
+  factory _$CompanyModelImpl.fromJson(Map<String, dynamic> json) =>
+      _$$CompanyModelImplFromJson(json);
 
   @override
   final String? name;
@@ -140,7 +140,7 @@ class _$_CompanyModel implements _CompanyModel {
   bool operator ==(dynamic other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
-            other is _$_CompanyModel &&
+            other is _$CompanyModelImpl &&
             (identical(other.name, name) || other.name == name) &&
             (identical(other.catchPhrase, catchPhrase) ||
                 other.catchPhrase == catchPhrase) &&
@@ -154,12 +154,12 @@ class _$_CompanyModel implements _CompanyModel {
   @JsonKey(ignore: true)
   @override
   @pragma('vm:prefer-inline')
-  _$$_CompanyModelCopyWith<_$_CompanyModel> get copyWith =>
-      __$$_CompanyModelCopyWithImpl<_$_CompanyModel>(this, _$identity);
+  _$$CompanyModelImplCopyWith<_$CompanyModelImpl> get copyWith =>
+      __$$CompanyModelImplCopyWithImpl<_$CompanyModelImpl>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {
-    return _$$_CompanyModelToJson(
+    return _$$CompanyModelImplToJson(
       this,
     );
   }
@@ -169,10 +169,10 @@ abstract class _CompanyModel implements CompanyModel {
   const factory _CompanyModel(
       {final String? name,
       final String? catchPhrase,
-      final String? bs}) = _$_CompanyModel;
+      final String? bs}) = _$CompanyModelImpl;
 
   factory _CompanyModel.fromJson(Map<String, dynamic> json) =
-      _$_CompanyModel.fromJson;
+      _$CompanyModelImpl.fromJson;
 
   @override
   String? get name;
@@ -182,6 +182,6 @@ abstract class _CompanyModel implements CompanyModel {
   String? get bs;
   @override
   @JsonKey(ignore: true)
-  _$$_CompanyModelCopyWith<_$_CompanyModel> get copyWith =>
+  _$$CompanyModelImplCopyWith<_$CompanyModelImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
