@@ -1,7 +1,7 @@
 ## Personal Riverpod Playground ##
 
 Personal Flutter Riverpod playground.  
-Download apk file [here](https://www.dropbox.com/scl/fi/yayyusyjpsbkzgycyr0q7)
+Download apk file [here](https://e.pcloud.link/publink/show?code=XZGGQDZ0ezLJ8NLr9RBTRtMawmdWpkoKG27)
 
 ```
 Flutter 3.16.0 • channel stable • https://github.com/flutter/flutter.git
@@ -29,7 +29,6 @@ Tools • Dart 3.2.0 • DevTools 2.28.2
 - [Json Annotation](https://pub.dev/packages/json_annotation)
 - [Json Serializable](https://pub.dev/packages/json_serializable)
 - [Permission Handler](https://pub.dev/packages/permission_handler)
-- [Stack Trace](https://pub.dev/packages/stack_trace)
 
 ### References ###
 - [Youtube](https://www.youtube.com/watch?v=FdsqU02xwsE)
