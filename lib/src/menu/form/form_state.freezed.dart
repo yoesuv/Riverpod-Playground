@@ -12,7 +12,7 @@ part of 'form_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$FormState {
@@ -22,7 +22,9 @@ mixin _$FormState {
   String? get fullNameError => throw _privateConstructorUsedError;
   String? get emailError => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $FormStateCopyWith<FormState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -50,6 +52,8 @@ class _$FormStateCopyWithImpl<$Res, $Val extends FormState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of FormState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -108,6 +112,8 @@ class __$$FormStateImplCopyWithImpl<$Res>
       _$FormStateImpl _value, $Res Function(_$FormStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of FormState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -172,7 +178,7 @@ class _$FormStateImpl implements _FormState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$FormStateImpl &&
@@ -191,7 +197,9 @@ class _$FormStateImpl implements _FormState {
   int get hashCode => Object.hash(
       runtimeType, fullName, email, isFormValid, fullNameError, emailError);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of FormState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$FormStateImplCopyWith<_$FormStateImpl> get copyWith =>
@@ -216,8 +224,11 @@ abstract class _FormState implements FormState {
   String? get fullNameError;
   @override
   String? get emailError;
+
+  /// Create a copy of FormState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$FormStateImplCopyWith<_$FormStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }

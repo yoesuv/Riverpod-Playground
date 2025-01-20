@@ -12,14 +12,16 @@ part of 'picker_state.dart';
 T _$identity<T>(T value) => value;
 
 final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#custom-getters-and-methods');
+    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
 
 /// @nodoc
 mixin _$PickerState {
   File? get imageFile => throw _privateConstructorUsedError;
   PermissionStatus get status => throw _privateConstructorUsedError;
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PickerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   $PickerStateCopyWith<PickerState> get copyWith =>
       throw _privateConstructorUsedError;
 }
@@ -43,6 +45,8 @@ class _$PickerStateCopyWithImpl<$Res, $Val extends PickerState>
   // ignore: unused_field
   final $Res Function($Val) _then;
 
+  /// Create a copy of PickerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -81,6 +85,8 @@ class __$$PickerStateImplCopyWithImpl<$Res>
       _$PickerStateImpl _value, $Res Function(_$PickerStateImpl) _then)
       : super(_value, _then);
 
+  /// Create a copy of PickerState
+  /// with the given fields replaced by the non-null parameter values.
   @pragma('vm:prefer-inline')
   @override
   $Res call({
@@ -118,7 +124,7 @@ class _$PickerStateImpl implements _PickerState {
   }
 
   @override
-  bool operator ==(dynamic other) {
+  bool operator ==(Object other) {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$PickerStateImpl &&
@@ -130,7 +136,9 @@ class _$PickerStateImpl implements _PickerState {
   @override
   int get hashCode => Object.hash(runtimeType, imageFile, status);
 
-  @JsonKey(ignore: true)
+  /// Create a copy of PickerState
+  /// with the given fields replaced by the non-null parameter values.
+  @JsonKey(includeFromJson: false, includeToJson: false)
   @override
   @pragma('vm:prefer-inline')
   _$$PickerStateImplCopyWith<_$PickerStateImpl> get copyWith =>
@@ -146,8 +154,11 @@ abstract class _PickerState implements PickerState {
   File? get imageFile;
   @override
   PermissionStatus get status;
+
+  /// Create a copy of PickerState
+  /// with the given fields replaced by the non-null parameter values.
   @override
-  @JsonKey(ignore: true)
+  @JsonKey(includeFromJson: false, includeToJson: false)
   _$$PickerStateImplCopyWith<_$PickerStateImpl> get copyWith =>
       throw _privateConstructorUsedError;
 }
