@@ -1,7 +1,7 @@
 ## Personal Riverpod Playground ##
 
 Personal Flutter Riverpod playground.  
-Download apk file [here](https://e.pcloud.link/publink/show?code=XZGGQDZ0ezLJ8NLr9RBTRtMawmdWpkoKG27)
+Download apk file [here](https://e.pcloud.link/publink/show?code=XZPm8KZjaxzWWxvgyJvemKlVVeJYhQFoBgV)
 
 ```
 Flutter 3.27.1 • channel stable • https://github.com/flutter/flutter.git
