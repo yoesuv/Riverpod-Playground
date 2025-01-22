@@ -27,9 +27,9 @@ class NetworkingScreen extends ConsumerWidget {
   }
 
   Widget _buildContent(FormzSubmissionStatus status) {
-    if (status == FormzSubmissionStatus.success) {
+    if (status.isSuccess) {
       return const ListUser();
-    } else if (status == FormzSubmissionStatus.failure) {
+    } else if (status.isFailure) {
       return _error();
     } else {
       return _loading();
