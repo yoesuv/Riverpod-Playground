@@ -10,4 +10,10 @@ class NetworkingState with _$NetworkingState {
     @Default(FormzSubmissionStatus.initial) FormzSubmissionStatus status,
     List<UserModel>? users,
   }) = _NetworkingState;
+
+  @override
+  FormzSubmissionStatus get status => throw UnimplementedError();
+
+  @override
+  List<UserModel>? get users => throw UnimplementedError();
 }

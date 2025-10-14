@@ -12,4 +12,15 @@ class GeoModel with _$GeoModel {
 
   factory GeoModel.fromJson(Map<String, Object?> json) =>
       _$GeoModelFromJson(json);
+
+  @override
+  String? get lat => throw UnimplementedError();
+
+  @override
+  String? get lng => throw UnimplementedError();
+
+  @override
+  Map<String, dynamic> toJson() {
+    throw UnimplementedError();
+  }
 }

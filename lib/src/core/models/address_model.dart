@@ -16,4 +16,24 @@ class AddressModel with _$AddressModel{
 
   factory AddressModel.fromJson(Map<String, Object?> json) =>
       _$AddressModelFromJson(json);
+
+  @override
+  String? get city => throw UnimplementedError();
+
+  @override
+  GeoModel? get geo => throw UnimplementedError();
+
+  @override
+  String? get street => throw UnimplementedError();
+
+  @override
+  String? get suite => throw UnimplementedError();
+
+  @override
+  Map<String, dynamic> toJson() {
+    throw UnimplementedError();
+  }
+
+  @override
+  String? get zipcode => throw UnimplementedError();
 }

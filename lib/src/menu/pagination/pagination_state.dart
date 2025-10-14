@@ -11,4 +11,13 @@ class PaginationState with _$PaginationState {
     @Default(<PostModel>[]) List<PostModel>? posts,
     @Default(false) bool hasReachedMax,
   }) = _PaginationState;
+
+  @override
+  bool get hasReachedMax => throw UnimplementedError();
+
+  @override
+  List<PostModel>? get posts => throw UnimplementedError();
+
+  @override
+  FormzSubmissionStatus get status => throw UnimplementedError();
 }

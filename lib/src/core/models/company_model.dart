@@ -13,4 +13,18 @@ class CompanyModel with _$CompanyModel {
 
   factory CompanyModel.fromJson(Map<String, Object?> json) =>
       _$CompanyModelFromJson(json);
+
+  @override
+  String? get bs => throw UnimplementedError();
+
+  @override
+  String? get catchPhrase => throw UnimplementedError();
+
+  @override
+  String? get name => throw UnimplementedError();
+
+  @override
+  Map<String, dynamic> toJson() {
+    throw UnimplementedError();
+  }
 }

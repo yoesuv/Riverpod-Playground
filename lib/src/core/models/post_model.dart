@@ -19,4 +19,21 @@ class PostModel with _$PostModel {
     return json.map((dynamic i) => PostModel.fromJson(i)).toList();
   }
 
+  @override
+  String? get body => throw UnimplementedError();
+
+  @override
+  int? get id => throw UnimplementedError();
+
+  @override
+  String? get title => throw UnimplementedError();
+
+  @override
+  Map<String, dynamic> toJson() {
+    throw UnimplementedError();
+  }
+
+  @override
+  int? get userId => throw UnimplementedError();
+
 }

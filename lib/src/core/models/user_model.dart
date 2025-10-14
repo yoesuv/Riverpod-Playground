@@ -24,4 +24,33 @@ class UserModel with _$UserModel {
   static List<UserModel> buildListFromJson(List<dynamic> json) {
     return json.map((dynamic x) => UserModel.fromJson(x)).toList();
   }
+
+  @override
+  AddressModel? get address => throw UnimplementedError();
+
+  @override
+  CompanyModel? get company => throw UnimplementedError();
+
+  @override
+  String? get email => throw UnimplementedError();
+
+  @override
+  int? get id => throw UnimplementedError();
+
+  @override
+  String? get name => throw UnimplementedError();
+
+  @override
+  String? get phone => throw UnimplementedError();
+
+  @override
+  Map<String, dynamic> toJson() {
+    throw UnimplementedError();
+  }
+
+  @override
+  String? get username => throw UnimplementedError();
+
+  @override
+  String? get website => throw UnimplementedError();
 }

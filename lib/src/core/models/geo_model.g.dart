@@ -6,14 +6,10 @@ part of 'geo_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$GeoModelImpl _$$GeoModelImplFromJson(Map<String, dynamic> json) =>
-    _$GeoModelImpl(
-      lat: json['lat'] as String?,
-      lng: json['lng'] as String?,
-    );
+_GeoModel _$GeoModelFromJson(Map<String, dynamic> json) =>
+    _GeoModel(lat: json['lat'] as String?, lng: json['lng'] as String?);
 
-Map<String, dynamic> _$$GeoModelImplToJson(_$GeoModelImpl instance) =>
-    <String, dynamic>{
-      'lat': instance.lat,
-      'lng': instance.lng,
-    };
+Map<String, dynamic> _$GeoModelToJson(_GeoModel instance) => <String, dynamic>{
+  'lat': instance.lat,
+  'lng': instance.lng,
+};

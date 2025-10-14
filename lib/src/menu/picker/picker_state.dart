@@ -11,4 +11,10 @@ class PickerState with _$PickerState {
     File? imageFile,
     @Default(PermissionStatus.denied) PermissionStatus status,
   }) = _PickerState;
+
+  @override
+  File? get imageFile => throw UnimplementedError();
+
+  @override
+  PermissionStatus get status => throw UnimplementedError();
 }

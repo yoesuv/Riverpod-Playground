@@ -4,7 +4,7 @@ import 'package:riverpod_playground/src/utils/validation/full_name_validation.da
 
 part 'form_state.freezed.dart';
 
-@Freezed()
+@freezed
 class FormState with _$FormState {
   const factory FormState({
     @Default(FullName.pure()) FullName fullName,
@@ -13,4 +13,19 @@ class FormState with _$FormState {
     String? fullNameError,
     String? emailError,
   }) = _FormState;
+
+  @override
+  Email get email => throw UnimplementedError();
+
+  @override
+  String? get emailError => throw UnimplementedError();
+
+  @override
+  FullName get fullName => throw UnimplementedError();
+
+  @override
+  String? get fullNameError => throw UnimplementedError();
+
+  @override
+  bool get isFormValid => throw UnimplementedError();
 }
