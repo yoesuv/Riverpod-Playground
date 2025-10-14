@@ -8,12 +8,15 @@ import 'package:permission_handler/permission_handler.dart';
 import 'package:riverpod_playground/src/menu/picker/picker_state.dart';
 
 final pickerNotifier =
-    StateNotifierProvider.autoDispose<PickerNotifier, PickerState>((ref) {
-  return PickerNotifier(const PickerState());
-});
+    NotifierProvider.autoDispose<PickerNotifier, PickerState>(
+      PickerNotifier.new,
+    );
 
-class PickerNotifier extends StateNotifier<PickerState> {
-  PickerNotifier(super._state);
+class PickerNotifier extends Notifier<PickerState> {
+  @override
+  PickerState build() {
+    return const PickerState();
+  }
 
   void checkPermissionStatus() async {
     final androidInfo = await DeviceInfoPlugin().androidInfo;
@@ -21,14 +24,10 @@ class PickerNotifier extends StateNotifier<PickerState> {
     late PermissionStatus status;
     if (sdkInt < 33) {
       status = await Permission.storage.status;
-      state = state.copyWith(
-        status: status,
-      );
+      state = state.copyWith(status: status);
     } else {
       status = await Permission.photos.status;
-      state = state.copyWith(
-        status: status,
-      );
+      state = state.copyWith(status: status);
     }
   }
 
@@ -38,14 +37,10 @@ class PickerNotifier extends StateNotifier<PickerState> {
     late PermissionStatus status;
     if (sdkInt < 33) {
       status = await Permission.storage.request();
-      state = state.copyWith(
-        status: status,
-      );
+      state = state.copyWith(status: status);
     } else {
       status = await Permission.photos.request();
-      state = state.copyWith(
-        status: status,
-      );
+      state = state.copyWith(status: status);
     }
     if (status == PermissionStatus.granted) {
       _openGallery();
@@ -55,9 +50,7 @@ class PickerNotifier extends StateNotifier<PickerState> {
   void openGalleryIos() async {
     late PermissionStatus status;
     status = await Permission.photos.request();
-    state = state.copyWith(
-      status: status,
-    );
+    state = state.copyWith(status: status);
     if (status == PermissionStatus.granted) {
       _openGallery();
     }
@@ -70,9 +63,7 @@ class PickerNotifier extends StateNotifier<PickerState> {
     );
     if (xFile != null) {
       debugPrint('PickerNotifier # image path ${xFile.path}');
-      state = state.copyWith(
-        imageFile: File(xFile.path),
-      );
+      state = state.copyWith(imageFile: File(xFile.path));
     }
   }
 }
