@@ -5,7 +5,7 @@ import 'package:permission_handler/permission_handler.dart';
 
 part 'picker_state.freezed.dart';
 
-@Freezed()
+@freezed
 sealed class PickerState with _$PickerState {
   const factory PickerState({
     File? imageFile,

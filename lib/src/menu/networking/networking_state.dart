@@ -4,7 +4,7 @@ import 'package:riverpod_playground/src/core/models/user_model.dart';
 
 part 'networking_state.freezed.dart';
 
-@Freezed()
+@freezed
 sealed class NetworkingState with _$NetworkingState {
   const factory NetworkingState({
     @Default(FormzSubmissionStatus.initial) FormzSubmissionStatus status,
