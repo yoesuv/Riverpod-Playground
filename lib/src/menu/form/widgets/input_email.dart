@@ -8,7 +8,7 @@ class InputEmail extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final error = ref.watch(
-      formNotifier.select((state) => state.emailError),
+      formProvider.select((state) => state.emailError),
     );
     return TextField(
       decoration: InputDecoration(
@@ -19,7 +19,7 @@ class InputEmail extends ConsumerWidget {
       keyboardType: TextInputType.emailAddress,
       textInputAction: TextInputAction.done,
       onChanged: (value) =>
-          ref.read(formNotifier.notifier).onEmailChanged(value),
+          ref.read(formProvider.notifier).onEmailChanged(value),
     );
   }
 }

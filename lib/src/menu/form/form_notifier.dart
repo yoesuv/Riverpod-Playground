@@ -1,13 +1,12 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_playground/src/menu/form/form_state.dart';
 import 'package:riverpod_playground/src/utils/validation/email_validation.dart';
 import 'package:riverpod_playground/src/utils/validation/full_name_validation.dart';
 
-final formNotifier = NotifierProvider.autoDispose<FormNotifier, FormState>(
-  FormNotifier.new,
-);
+part 'form_notifier.g.dart';
 
-class FormNotifier extends Notifier<FormState> {
+@riverpod
+class Form extends _$Form {
   @override
   FormState build() {
     return const FormState();
