@@ -6,15 +6,10 @@ import 'package:permission_handler/permission_handler.dart';
 part 'picker_state.freezed.dart';
 
 @Freezed()
-class PickerState with _$PickerState {
+sealed class PickerState with _$PickerState {
   const factory PickerState({
     File? imageFile,
     @Default(PermissionStatus.denied) PermissionStatus status,
   }) = _PickerState;
 
-  @override
-  File? get imageFile => throw UnimplementedError();
-
-  @override
-  PermissionStatus get status => throw UnimplementedError();
 }
