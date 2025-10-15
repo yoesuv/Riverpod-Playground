@@ -1,16 +1,14 @@
 import 'dart:io';
 
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_playground/src/menu/picker/picker_state.dart';
 
-final pickerNotifier =
-    NotifierProvider.autoDispose<PickerNotifier, PickerState>(
-      PickerNotifier.new,
-    );
+part 'picker_notifier.g.dart';
 
-class PickerNotifier extends Notifier<PickerState> {
+@riverpod
+class Picker extends _$Picker {
   @override
   PickerState build() {
     return const PickerState();
@@ -22,7 +20,7 @@ class PickerNotifier extends Notifier<PickerState> {
       imageQuality: 90,
     );
     if (xFile != null) {
-      debugPrint('PickerNotifier # image path ${xFile.path}');
+      debugPrint('Picker # image path ${xFile.path}');
       state = state.copyWith(imageFile: File(xFile.path));
     }
   }

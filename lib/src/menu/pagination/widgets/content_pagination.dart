@@ -14,9 +14,9 @@ class ContentPagination extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final posts =
-        ref.watch(paginationNotifier.select((state) => state.posts)) ?? [];
+        ref.watch(paginationProvider.select((state) => state.posts)) ?? [];
     final hasReachedMax =
-        ref.watch(paginationNotifier.select((state) => state.hasReachedMax));
+        ref.watch(paginationProvider.select((state) => state.hasReachedMax));
     return posts.isEmpty
         ? const Center(
             child: CircularProgressIndicator(),

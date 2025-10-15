@@ -1,14 +1,12 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_playground/src/core/repositories/post_repository.dart';
 import 'package:riverpod_playground/src/menu/pagination/pagination_state.dart';
 
-final paginationNotifier =
-    NotifierProvider.autoDispose<PaginationNotifier, PaginationState>(
-      PaginationNotifier.new,
-    );
+part 'pagination_notifier.g.dart';
 
-class PaginationNotifier extends Notifier<PaginationState> {
+@riverpod
+class Pagination extends _$Pagination {
   @override
   PaginationState build() {
     return const PaginationState();

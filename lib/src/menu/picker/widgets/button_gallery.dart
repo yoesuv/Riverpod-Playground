@@ -11,7 +11,7 @@ class ButtonGallery extends ConsumerWidget {
     return MyButton(
       label: 'Open Gallery',
       onPressed: () {
-        ref.read(pickerNotifier.notifier).openGallery();
+        ref.read(pickerProvider.notifier).openGallery();
       },
     );
   }
