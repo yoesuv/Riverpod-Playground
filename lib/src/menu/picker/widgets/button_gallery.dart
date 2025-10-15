@@ -1,5 +1,3 @@
-import 'dart:io';
-
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:riverpod_playground/src/menu/picker/picker_notifier.dart';
@@ -13,11 +11,7 @@ class ButtonGallery extends ConsumerWidget {
     return MyButton(
       label: 'Open Gallery',
       onPressed: () {
-        if (Platform.isAndroid) {
-          ref.read(pickerNotifier.notifier).openGalleryAndroid();
-        } else {
-          ref.read(pickerNotifier.notifier).openGalleryIos();
-        }
+        ref.read(pickerNotifier.notifier).openGallery();
       },
     );
   }
