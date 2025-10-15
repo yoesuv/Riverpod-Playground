@@ -11,8 +11,9 @@ class NetworkingScreen extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    ref.read(networkNotifier.notifier).requestUsers();
-    final status = ref.watch(networkNotifier.select((state) => state.status));
+    ref.read(networkingProvider.notifier).requestUsers();
+    final status =
+        ref.watch(networkingProvider.select((state) => state.status));
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,

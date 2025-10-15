@@ -1,15 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_playground/src/core/repositories/user_repository.dart';
 import 'package:riverpod_playground/src/menu/networking/networking_state.dart';
 
-final networkNotifier =
-    NotifierProvider.autoDispose<NetworkingNotifier, NetworkingState>(
-      NetworkingNotifier.new,
-    );
+part 'networking_notifier.g.dart';
 
-class NetworkingNotifier extends Notifier<NetworkingState> {
+@riverpod
+class Networking extends _$Networking {
   @override
   NetworkingState build() {
     return const NetworkingState();
