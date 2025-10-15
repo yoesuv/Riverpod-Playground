@@ -1,12 +1,10 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_playground/src/menu/counter/counter_state.dart';
 
-final counterNotifier =
-    NotifierProvider.autoDispose<CounterNotifier, CounterState>(
-      CounterNotifier.new,
-    );
+part 'counter_notifier.g.dart';
 
-class CounterNotifier extends Notifier<CounterState> {
+@riverpod
+class Counter extends _$Counter {
   @override
   CounterState build() {
     return const CounterState(counter: 0);

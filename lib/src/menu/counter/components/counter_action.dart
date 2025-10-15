@@ -13,7 +13,7 @@ class CounterAction extends ConsumerWidget {
         MaterialButton(
           color: Colors.teal,
           onPressed: () {
-            ref.read(counterNotifier.notifier).onMinus();
+            ref.read(counterProvider.notifier).onMinus();
           },
           child: const Icon(
             Icons.remove,
@@ -23,7 +23,7 @@ class CounterAction extends ConsumerWidget {
         MaterialButton(
           color: Colors.teal,
           onPressed: () {
-            ref.read(counterNotifier.notifier).onPlus();
+            ref.read(counterProvider.notifier).onPlus();
           },
           child: const Icon(
             Icons.add,
