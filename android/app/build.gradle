@@ -59,8 +59,13 @@ android {
             // Signing with the debug keys for now, so `flutter run --release` works.
             signingConfig signingConfigs.debug
             applicationVariants.all { variant ->
-                variant.outputs.all {
-                    outputFileName = "Riverpod_Playground-${variant.name}-v${variant.versionName}.apk"
+                variant.outputs.each { output ->
+                    def abi = output.getFilter(com.android.build.OutputFile.ABI)
+                    if (abi != null) {
+                        output.outputFileName = "Riverpod_Playground-${variant.name}-${abi}-v${variant.versionName}.apk"
+                    } else {
+                        output.outputFileName = "Riverpod_Playground-${variant.name}-v${variant.versionName}.apk"
+                    }
                 }
             }
         }
