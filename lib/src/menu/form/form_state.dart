@@ -4,8 +4,8 @@ import 'package:riverpod_playground/src/utils/validation/full_name_validation.da
 
 part 'form_state.freezed.dart';
 
-@Freezed()
-class FormState with _$FormState {
+@freezed
+sealed class FormState with _$FormState {
   const factory FormState({
     @Default(FullName.pure()) FullName fullName,
     @Default(Email.pure()) Email email,

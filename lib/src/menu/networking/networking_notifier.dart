@@ -1,17 +1,17 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_playground/src/core/repositories/user_repository.dart';
 import 'package:riverpod_playground/src/menu/networking/networking_state.dart';
 
-final networkNotifier =
-    StateNotifierProvider.autoDispose<NetworkingNotifier, NetworkingState>(
-        (ref) {
-  return NetworkingNotifier(const NetworkingState());
-});
+part 'networking_notifier.g.dart';
 
-class NetworkingNotifier extends StateNotifier<NetworkingState> {
-  NetworkingNotifier(super._state);
+@riverpod
+class Networking extends _$Networking {
+  @override
+  NetworkingState build() {
+    return const NetworkingState();
+  }
 
   final _repoUser = UserRepository();
 
@@ -27,10 +27,7 @@ class NetworkingNotifier extends StateNotifier<NetworkingState> {
         'NetworkingController # error requestUsers $e',
         wrapWidth: 1024,
       );
-      state = state.copyWith(
-        status: FormzSubmissionStatus.failure,
-        users: [],
-      );
+      state = state.copyWith(status: FormzSubmissionStatus.failure, users: []);
     }
   }
 }

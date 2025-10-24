@@ -10,6 +10,10 @@ class NetworkHelper {
       connectTimeout: TIME_OUT,
       sendTimeout: TIME_OUT,
       receiveTimeout: TIME_OUT,
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json',
+      },
     ));
     if (kDebugMode) {
       _dio.interceptors.add(LoggingInterceptor());

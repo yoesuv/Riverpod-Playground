@@ -1,16 +1,16 @@
-import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:formz/formz.dart';
+import 'package:riverpod_annotation/riverpod_annotation.dart';
 import 'package:riverpod_playground/src/core/repositories/post_repository.dart';
 import 'package:riverpod_playground/src/menu/pagination/pagination_state.dart';
 
-final paginationNotifier =
-    StateNotifierProvider.autoDispose<PaginationNotifier, PaginationState>(
-        (ref) {
-  return PaginationNotifier(const PaginationState());
-});
+part 'pagination_notifier.g.dart';
 
-class PaginationNotifier extends StateNotifier<PaginationState> {
-  PaginationNotifier(super._state);
+@riverpod
+class Pagination extends _$Pagination {
+  @override
+  PaginationState build() {
+    return const PaginationState();
+  }
 
   final repoPost = PostRepository();
 
@@ -23,10 +23,7 @@ class PaginationNotifier extends StateNotifier<PaginationState> {
         hasReachedMax: false,
       );
     } catch (e) {
-      state = state.copyWith(
-        posts: [],
-        status: FormzSubmissionStatus.failure,
-      );
+      state = state.copyWith(posts: [], status: FormzSubmissionStatus.failure);
     }
   }
 
@@ -35,9 +32,7 @@ class PaginationNotifier extends StateNotifier<PaginationState> {
     try {
       final posts = await repoPost.getListPost(state.posts?.length ?? 0);
       if (posts.isEmpty) {
-        state = state.copyWith(
-          hasReachedMax: true,
-        );
+        state = state.copyWith(hasReachedMax: true);
       } else {
         state = state.copyWith(
           status: FormzSubmissionStatus.success,
@@ -46,9 +41,7 @@ class PaginationNotifier extends StateNotifier<PaginationState> {
         );
       }
     } catch (e) {
-      state = state.copyWith(
-        status: FormzSubmissionStatus.failure,
-      );
+      state = state.copyWith(status: FormzSubmissionStatus.failure);
     }
   }
 }

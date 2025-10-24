@@ -1,5 +1,5 @@
-// coverage:ignore-file
 // GENERATED CODE - DO NOT MODIFY BY HAND
+// coverage:ignore-file
 // ignore_for_file: type=lint
 // ignore_for_file: unused_element, deprecated_member_use, deprecated_member_use_from_same_package, use_function_type_syntax_for_parameters, unnecessary_const, avoid_init_to_null, invalid_override_different_default_values_named, prefer_expression_function_bodies, annotate_overrides, invalid_annotation_target, unnecessary_question_mark
 
@@ -9,172 +9,266 @@ part of 'geo_model.dart';
 // FreezedGenerator
 // **************************************************************************
 
+// dart format off
 T _$identity<T>(T value) => value;
-
-final _privateConstructorUsedError = UnsupportedError(
-    'It seems like you constructed your class using `MyClass._()`. This constructor is only meant to be used by freezed and you are not supposed to need it nor use it.\nPlease check the documentation here for more information: https://github.com/rrousselGit/freezed#adding-getters-and-methods-to-our-models');
-
-GeoModel _$GeoModelFromJson(Map<String, dynamic> json) {
-  return _GeoModel.fromJson(json);
-}
 
 /// @nodoc
 mixin _$GeoModel {
-  String? get lat => throw _privateConstructorUsedError;
-  String? get lng => throw _privateConstructorUsedError;
+
+ String? get lat; String? get lng;
+/// Create a copy of GeoModel
+/// with the given fields replaced by the non-null parameter values.
+@JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+$GeoModelCopyWith<GeoModel> get copyWith => _$GeoModelCopyWithImpl<GeoModel>(this as GeoModel, _$identity);
 
   /// Serializes this GeoModel to a JSON map.
-  Map<String, dynamic> toJson() => throw _privateConstructorUsedError;
+  Map<String, dynamic> toJson();
 
-  /// Create a copy of GeoModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  $GeoModelCopyWith<GeoModel> get copyWith =>
-      throw _privateConstructorUsedError;
+
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is GeoModel&&(identical(other.lat, lat) || other.lat == lat)&&(identical(other.lng, lng) || other.lng == lng));
+}
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,lat,lng);
+
+@override
+String toString() {
+  return 'GeoModel(lat: $lat, lng: $lng)';
+}
+
+
 }
 
 /// @nodoc
-abstract class $GeoModelCopyWith<$Res> {
-  factory $GeoModelCopyWith(GeoModel value, $Res Function(GeoModel) then) =
-      _$GeoModelCopyWithImpl<$Res, GeoModel>;
-  @useResult
-  $Res call({String? lat, String? lng});
-}
+abstract mixin class $GeoModelCopyWith<$Res>  {
+  factory $GeoModelCopyWith(GeoModel value, $Res Function(GeoModel) _then) = _$GeoModelCopyWithImpl;
+@useResult
+$Res call({
+ String? lat, String? lng
+});
 
+
+
+
+}
 /// @nodoc
-class _$GeoModelCopyWithImpl<$Res, $Val extends GeoModel>
+class _$GeoModelCopyWithImpl<$Res>
     implements $GeoModelCopyWith<$Res> {
-  _$GeoModelCopyWithImpl(this._value, this._then);
+  _$GeoModelCopyWithImpl(this._self, this._then);
 
-  // ignore: unused_field
-  final $Val _value;
-  // ignore: unused_field
-  final $Res Function($Val) _then;
+  final GeoModel _self;
+  final $Res Function(GeoModel) _then;
 
-  /// Create a copy of GeoModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? lat = freezed,
-    Object? lng = freezed,
-  }) {
-    return _then(_value.copyWith(
-      lat: freezed == lat
-          ? _value.lat
-          : lat // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lng: freezed == lng
-          ? _value.lng
-          : lng // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ) as $Val);
-  }
+/// Create a copy of GeoModel
+/// with the given fields replaced by the non-null parameter values.
+@pragma('vm:prefer-inline') @override $Res call({Object? lat = freezed,Object? lng = freezed,}) {
+  return _then(_self.copyWith(
+lat: freezed == lat ? _self.lat : lat // ignore: cast_nullable_to_non_nullable
+as String?,lng: freezed == lng ? _self.lng : lng // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
 }
 
-/// @nodoc
-abstract class _$$GeoModelImplCopyWith<$Res>
-    implements $GeoModelCopyWith<$Res> {
-  factory _$$GeoModelImplCopyWith(
-          _$GeoModelImpl value, $Res Function(_$GeoModelImpl) then) =
-      __$$GeoModelImplCopyWithImpl<$Res>;
-  @override
-  @useResult
-  $Res call({String? lat, String? lng});
 }
 
-/// @nodoc
-class __$$GeoModelImplCopyWithImpl<$Res>
-    extends _$GeoModelCopyWithImpl<$Res, _$GeoModelImpl>
-    implements _$$GeoModelImplCopyWith<$Res> {
-  __$$GeoModelImplCopyWithImpl(
-      _$GeoModelImpl _value, $Res Function(_$GeoModelImpl) _then)
-      : super(_value, _then);
 
-  /// Create a copy of GeoModel
-  /// with the given fields replaced by the non-null parameter values.
-  @pragma('vm:prefer-inline')
-  @override
-  $Res call({
-    Object? lat = freezed,
-    Object? lng = freezed,
-  }) {
-    return _then(_$GeoModelImpl(
-      lat: freezed == lat
-          ? _value.lat
-          : lat // ignore: cast_nullable_to_non_nullable
-              as String?,
-      lng: freezed == lng
-          ? _value.lng
-          : lng // ignore: cast_nullable_to_non_nullable
-              as String?,
-    ));
-  }
+/// Adds pattern-matching-related methods to [GeoModel].
+extension GeoModelPatterns on GeoModel {
+/// A variant of `map` that fallback to returning `orElse`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeMap<TResult extends Object?>(TResult Function( _GeoModel value)?  $default,{required TResult orElse(),}){
+final _that = this;
+switch (_that) {
+case _GeoModel() when $default != null:
+return $default(_that);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// Callbacks receives the raw object, upcasted.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case final Subclass2 value:
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult map<TResult extends Object?>(TResult Function( _GeoModel value)  $default,){
+final _that = this;
+switch (_that) {
+case _GeoModel():
+return $default(_that);}
+}
+/// A variant of `map` that fallback to returning `null`.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case final Subclass value:
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? mapOrNull<TResult extends Object?>(TResult? Function( _GeoModel value)?  $default,){
+final _that = this;
+switch (_that) {
+case _GeoModel() when $default != null:
+return $default(_that);case _:
+  return null;
+
+}
+}
+/// A variant of `when` that fallback to an `orElse` callback.
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return orElse();
+/// }
+/// ```
+
+@optionalTypeArgs TResult maybeWhen<TResult extends Object?>(TResult Function( String? lat,  String? lng)?  $default,{required TResult orElse(),}) {final _that = this;
+switch (_that) {
+case _GeoModel() when $default != null:
+return $default(_that.lat,_that.lng);case _:
+  return orElse();
+
+}
+}
+/// A `switch`-like method, using callbacks.
+///
+/// As opposed to `map`, this offers destructuring.
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case Subclass2(:final field2):
+///     return ...;
+/// }
+/// ```
+
+@optionalTypeArgs TResult when<TResult extends Object?>(TResult Function( String? lat,  String? lng)  $default,) {final _that = this;
+switch (_that) {
+case _GeoModel():
+return $default(_that.lat,_that.lng);}
+}
+/// A variant of `when` that fallback to returning `null`
+///
+/// It is equivalent to doing:
+/// ```dart
+/// switch (sealedClass) {
+///   case Subclass(:final field):
+///     return ...;
+///   case _:
+///     return null;
+/// }
+/// ```
+
+@optionalTypeArgs TResult? whenOrNull<TResult extends Object?>(TResult? Function( String? lat,  String? lng)?  $default,) {final _that = this;
+switch (_that) {
+case _GeoModel() when $default != null:
+return $default(_that.lat,_that.lng);case _:
+  return null;
+
+}
+}
+
 }
 
 /// @nodoc
 @JsonSerializable()
-class _$GeoModelImpl implements _GeoModel {
-  const _$GeoModelImpl({this.lat, this.lng});
 
-  factory _$GeoModelImpl.fromJson(Map<String, dynamic> json) =>
-      _$$GeoModelImplFromJson(json);
+class _GeoModel implements GeoModel {
+  const _GeoModel({this.lat, this.lng});
+  factory _GeoModel.fromJson(Map<String, dynamic> json) => _$GeoModelFromJson(json);
 
-  @override
-  final String? lat;
-  @override
-  final String? lng;
+@override final  String? lat;
+@override final  String? lng;
 
-  @override
-  String toString() {
-    return 'GeoModel(lat: $lat, lng: $lng)';
-  }
+/// Create a copy of GeoModel
+/// with the given fields replaced by the non-null parameter values.
+@override @JsonKey(includeFromJson: false, includeToJson: false)
+@pragma('vm:prefer-inline')
+_$GeoModelCopyWith<_GeoModel> get copyWith => __$GeoModelCopyWithImpl<_GeoModel>(this, _$identity);
 
-  @override
-  bool operator ==(Object other) {
-    return identical(this, other) ||
-        (other.runtimeType == runtimeType &&
-            other is _$GeoModelImpl &&
-            (identical(other.lat, lat) || other.lat == lat) &&
-            (identical(other.lng, lng) || other.lng == lng));
-  }
-
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  int get hashCode => Object.hash(runtimeType, lat, lng);
-
-  /// Create a copy of GeoModel
-  /// with the given fields replaced by the non-null parameter values.
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  @override
-  @pragma('vm:prefer-inline')
-  _$$GeoModelImplCopyWith<_$GeoModelImpl> get copyWith =>
-      __$$GeoModelImplCopyWithImpl<_$GeoModelImpl>(this, _$identity);
-
-  @override
-  Map<String, dynamic> toJson() {
-    return _$$GeoModelImplToJson(
-      this,
-    );
-  }
+@override
+Map<String, dynamic> toJson() {
+  return _$GeoModelToJson(this, );
 }
 
-abstract class _GeoModel implements GeoModel {
-  const factory _GeoModel({final String? lat, final String? lng}) =
-      _$GeoModelImpl;
-
-  factory _GeoModel.fromJson(Map<String, dynamic> json) =
-      _$GeoModelImpl.fromJson;
-
-  @override
-  String? get lat;
-  @override
-  String? get lng;
-
-  /// Create a copy of GeoModel
-  /// with the given fields replaced by the non-null parameter values.
-  @override
-  @JsonKey(includeFromJson: false, includeToJson: false)
-  _$$GeoModelImplCopyWith<_$GeoModelImpl> get copyWith =>
-      throw _privateConstructorUsedError;
+@override
+bool operator ==(Object other) {
+  return identical(this, other) || (other.runtimeType == runtimeType&&other is _GeoModel&&(identical(other.lat, lat) || other.lat == lat)&&(identical(other.lng, lng) || other.lng == lng));
 }
+
+@JsonKey(includeFromJson: false, includeToJson: false)
+@override
+int get hashCode => Object.hash(runtimeType,lat,lng);
+
+@override
+String toString() {
+  return 'GeoModel(lat: $lat, lng: $lng)';
+}
+
+
+}
+
+/// @nodoc
+abstract mixin class _$GeoModelCopyWith<$Res> implements $GeoModelCopyWith<$Res> {
+  factory _$GeoModelCopyWith(_GeoModel value, $Res Function(_GeoModel) _then) = __$GeoModelCopyWithImpl;
+@override @useResult
+$Res call({
+ String? lat, String? lng
+});
+
+
+
+
+}
+/// @nodoc
+class __$GeoModelCopyWithImpl<$Res>
+    implements _$GeoModelCopyWith<$Res> {
+  __$GeoModelCopyWithImpl(this._self, this._then);
+
+  final _GeoModel _self;
+  final $Res Function(_GeoModel) _then;
+
+/// Create a copy of GeoModel
+/// with the given fields replaced by the non-null parameter values.
+@override @pragma('vm:prefer-inline') $Res call({Object? lat = freezed,Object? lng = freezed,}) {
+  return _then(_GeoModel(
+lat: freezed == lat ? _self.lat : lat // ignore: cast_nullable_to_non_nullable
+as String?,lng: freezed == lng ? _self.lng : lng // ignore: cast_nullable_to_non_nullable
+as String?,
+  ));
+}
+
+
+}
+
+// dart format on

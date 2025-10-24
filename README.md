@@ -1,13 +1,12 @@
 ## Personal Riverpod Playground ##
 
-Personal Flutter Riverpod playground.  
-Download apk file [here](https://e.pcloud.link/publink/show?code=XZPm8KZjaxzWWxvgyJvemKlVVeJYhQFoBgV)
+Personal Flutter Riverpod playground.
 
 ```
-Flutter 3.27.1 • channel stable • https://github.com/flutter/flutter.git
-Framework • revision 17025dd882 (5 weeks ago) • 2024-12-17 03:23:09 +0900
-Engine • revision cb4b5fff73
-Tools • Dart 3.6.0 • DevTools 2.40.2
+Flutter 3.35.6 • channel stable • https://github.com/flutter/flutter.git
+Framework • revision 9f455d2486 (6 days ago) • 2025-10-08 14:55:31 -0500
+Engine • (revision d2913632a4) (6 days ago) • 2025-10-07 17:26:21.000Z
+Tools • Dart 3.9.2 • DevTools 2.48.0
 ```
 ### Screenshot ###
 | ![](https://i.imgur.com/Cm5momi.png) | ![](https://images2.imgbox.com/5d/4d/jIWTHBJR_o.png) | ![](https://i.imgur.com/baEL283.png) | ![](https://images2.imgbox.com/37/37/XPrqZ7Ux_o.png) |

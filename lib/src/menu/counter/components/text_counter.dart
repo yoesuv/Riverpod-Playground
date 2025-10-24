@@ -7,7 +7,7 @@ class TextCounter extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final counter = ref.watch(counterNotifier.select((state) => state.counter));
+    final counter = ref.watch(counterProvider.select((state) => state.counter));
     return Text(
       '$counter',
       style: const TextStyle(

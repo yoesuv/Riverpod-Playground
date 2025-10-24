@@ -11,13 +11,13 @@ class ButtonSubmit extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final isValid = ref.watch(
-      formNotifier.select((state) => state.isFormValid),
+      formProvider.select((state) => state.isFormValid),
     );
     final fullName = ref.watch(
-      formNotifier.select((state) => state.fullName.value),
+      formProvider.select((state) => state.fullName.value),
     );
     final email = ref.watch(
-      formNotifier.select((state) => state.email.value),
+      formProvider.select((state) => state.email.value),
     );
     return Padding(
       padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),

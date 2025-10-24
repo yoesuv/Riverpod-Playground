@@ -8,7 +8,7 @@ class InputFullName extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final error = ref.watch(
-      formNotifier.select((state) => state.fullNameError),
+      formProvider.select((state) => state.fullNameError),
     );
     return TextField(
       decoration: InputDecoration(
@@ -19,7 +19,7 @@ class InputFullName extends ConsumerWidget {
       keyboardType: TextInputType.name,
       textInputAction: TextInputAction.next,
       onChanged: (value) =>
-          ref.read(formNotifier.notifier).onFullNameChanged(value),
+          ref.read(formProvider.notifier).onFullNameChanged(value),
     );
   }
 }

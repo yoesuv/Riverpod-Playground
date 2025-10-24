@@ -8,7 +8,7 @@ class ListUser extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final users =
-        ref.watch(networkNotifier.select((state) => state.users)) ?? [];
+        ref.watch(networkingProvider.select((state) => state.users)) ?? [];
     return ListView.separated(
       padding: const EdgeInsets.symmetric(vertical: 12),
       itemBuilder: (context, index) {

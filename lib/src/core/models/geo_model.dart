@@ -4,7 +4,7 @@ part 'geo_model.freezed.dart';
 part 'geo_model.g.dart';
 
 @freezed
-class GeoModel with _$GeoModel {
+sealed class GeoModel with _$GeoModel {
   const factory GeoModel({
     String? lat,
     String? lng,

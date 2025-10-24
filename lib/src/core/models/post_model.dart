@@ -4,7 +4,7 @@ part 'post_model.freezed.dart';
 part 'post_model.g.dart';
 
 @freezed
-class PostModel with _$PostModel {
+sealed class PostModel with _$PostModel {
   const factory PostModel({
     int? userId,
     int? id,
@@ -18,5 +18,4 @@ class PostModel with _$PostModel {
   static List<PostModel> buildListFromJson(List<dynamic> json) {
     return json.map((dynamic i) => PostModel.fromJson(i)).toList();
   }
-
 }

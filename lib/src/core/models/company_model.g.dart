@@ -6,14 +6,14 @@ part of 'company_model.dart';
 // JsonSerializableGenerator
 // **************************************************************************
 
-_$CompanyModelImpl _$$CompanyModelImplFromJson(Map<String, dynamic> json) =>
-    _$CompanyModelImpl(
+_CompanyModel _$CompanyModelFromJson(Map<String, dynamic> json) =>
+    _CompanyModel(
       name: json['name'] as String?,
       catchPhrase: json['catchPhrase'] as String?,
       bs: json['bs'] as String?,
     );
 
-Map<String, dynamic> _$$CompanyModelImplToJson(_$CompanyModelImpl instance) =>
+Map<String, dynamic> _$CompanyModelToJson(_CompanyModel instance) =>
     <String, dynamic>{
       'name': instance.name,
       'catchPhrase': instance.catchPhrase,
