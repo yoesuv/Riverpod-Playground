@@ -16,7 +16,6 @@ Tools • Dart 3.9.2 • DevTools 2.48.0
 
 ### Libraries ###
 - [Build Runner](https://pub.dev/packages/build_runner)
-- [Device Info Plus](https://pub.dev/packages/device_info_plus)
 - [dio](https://pub.dev/packages/dio)
 - [Email Validator](https://pub.dev/packages/email_validator)
 - [Flutter Riverpod](https://pub.dev/packages/flutter_riverpod)
