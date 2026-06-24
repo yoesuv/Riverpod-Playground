@@ -21,16 +21,11 @@ class FormScreen extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-              InputFullName(),
-              SizedBox(height: 8),
-              InputEmail(),
-            ],
+            children: [InputFullName(), SizedBox(height: 8), InputEmail()],
           ),
         ),
       ),
-      bottomNavigationBar: const ButtonSubmit(),
+      bottomNavigationBar: const SafeArea(child: ButtonSubmit()),
     );
   }
-
 }

@@ -16,10 +16,7 @@ class ListUser extends ConsumerWidget {
           padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 6),
           child: Text(
             users[index].name ?? '',
-            style: const TextStyle(
-              color: Colors.black,
-              fontSize: 16,
-            ),
+            style: const TextStyle(color: Colors.black, fontSize: 16),
           ),
         );
       },

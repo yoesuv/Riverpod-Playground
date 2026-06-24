@@ -15,10 +15,7 @@ class ContentImage extends ConsumerWidget {
         padding: const EdgeInsets.symmetric(horizontal: 12),
         child: image == null
             ? _emptyImage()
-            : Image.file(
-                image,
-                fit: BoxFit.cover,
-              ),
+            : Image.file(image, fit: BoxFit.cover),
       ),
     );
   }
@@ -27,12 +24,8 @@ class ContentImage extends ConsumerWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 12),
       child: Container(
-        decoration: BoxDecoration(
-          border: Border.all(color: Colors.black),
-        ),
-        child: const Center(
-          child: Text('Select an Image'),
-        ),
+        decoration: BoxDecoration(border: Border.all(color: Colors.black)),
+        child: const Center(child: Text('Select an Image')),
       ),
     );
   }

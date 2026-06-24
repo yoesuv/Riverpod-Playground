@@ -5,12 +5,8 @@ part 'post_model.g.dart';
 
 @freezed
 sealed class PostModel with _$PostModel {
-  const factory PostModel({
-    int? userId,
-    int? id,
-    String? title,
-    String? body,
-  }) = _PostModel;
+  const factory PostModel({int? userId, int? id, String? title, String? body}) =
+      _PostModel;
 
   factory PostModel.fromJson(Map<String, Object?> json) =>
       _$PostModelFromJson(json);

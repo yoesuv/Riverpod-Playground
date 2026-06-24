@@ -5,10 +5,7 @@ part 'geo_model.g.dart';
 
 @freezed
 sealed class GeoModel with _$GeoModel {
-  const factory GeoModel({
-    String? lat,
-    String? lng,
-  }) = _GeoModel;
+  const factory GeoModel({String? lat, String? lng}) = _GeoModel;
 
   factory GeoModel.fromJson(Map<String, Object?> json) =>
       _$GeoModelFromJson(json);

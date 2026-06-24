@@ -11,5 +11,4 @@ sealed class PaginationState with _$PaginationState {
     @Default(<PostModel>[]) List<PostModel>? posts,
     @Default(false) bool hasReachedMax,
   }) = _PaginationState;
-
 }

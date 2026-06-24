@@ -10,11 +10,11 @@ part of 'pagination_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(Pagination)
-const paginationProvider = PaginationProvider._();
+final paginationProvider = PaginationProvider._();
 
 final class PaginationProvider
     extends $NotifierProvider<Pagination, PaginationState> {
-  const PaginationProvider._()
+  PaginationProvider._()
     : super(
         from: null,
         argument: null,
@@ -47,8 +47,7 @@ abstract class _$Pagination extends $Notifier<PaginationState> {
   PaginationState build();
   @$mustCallSuper
   @override
-  void runBuild() {
-    final created = build();
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<PaginationState, PaginationState>;
     final element =
         ref.element
@@ -58,6 +57,6 @@ abstract class _$Pagination extends $Notifier<PaginationState> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    return element.handleCreate(ref, build);
   }
 }

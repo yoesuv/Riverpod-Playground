@@ -10,10 +10,7 @@ class TextCounter extends ConsumerWidget {
     final counter = ref.watch(counterProvider.select((state) => state.counter));
     return Text(
       '$counter',
-      style: const TextStyle(
-        fontSize: 150,
-        fontWeight: FontWeight.bold,
-      ),
+      style: const TextStyle(fontSize: 150, fontWeight: FontWeight.bold),
     );
   }
 }

@@ -11,5 +11,4 @@ sealed class PickerState with _$PickerState {
     File? imageFile,
     @Default(PermissionStatus.denied) PermissionStatus status,
   }) = _PickerState;
-
 }

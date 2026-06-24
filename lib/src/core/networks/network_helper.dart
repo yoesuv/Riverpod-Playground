@@ -5,16 +5,18 @@ import 'package:riverpod_playground/src/core/networks/logging_interceptor.dart';
 
 class NetworkHelper {
   NetworkHelper() {
-    _dio = Dio(BaseOptions(
-      baseUrl: BASE_URL,
-      connectTimeout: TIME_OUT,
-      sendTimeout: TIME_OUT,
-      receiveTimeout: TIME_OUT,
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json',
-      },
-    ));
+    _dio = Dio(
+      BaseOptions(
+        baseUrl: baseUrl,
+        connectTimeout: timeOut,
+        sendTimeout: timeOut,
+        receiveTimeout: timeOut,
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json',
+        },
+      ),
+    );
     if (kDebugMode) {
       _dio.interceptors.add(LoggingInterceptor());
     }

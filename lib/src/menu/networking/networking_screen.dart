@@ -12,18 +12,15 @@ class NetworkingScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     ref.read(networkingProvider.notifier).requestUsers();
-    final status =
-        ref.watch(networkingProvider.select((state) => state.status));
+    final status = ref.watch(
+      networkingProvider.select((state) => state.status),
+    );
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: const TitleAppBar(
-          label: 'Networking',
-        ),
+        title: const TitleAppBar(label: 'Networking'),
       ),
-      body: SafeArea(
-        child: _buildContent(status),
-      ),
+      body: SafeArea(child: _buildContent(status)),
     );
   }
 
@@ -38,9 +35,7 @@ class NetworkingScreen extends ConsumerWidget {
   }
 
   Widget _loading() {
-    return const Center(
-      child: CircularProgressIndicator(),
-    );
+    return const Center(child: CircularProgressIndicator());
   }
 
   Widget _error() {

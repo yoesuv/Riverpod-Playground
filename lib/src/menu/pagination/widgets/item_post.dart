@@ -16,17 +16,12 @@ class ItemPost extends StatelessWidget {
         children: [
           Text(
             '${postModel?.title}',
-            style: const TextStyle(
-              fontSize: 14,
-              fontWeight: FontWeight.bold,
-            ),
+            style: const TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 6),
           Text(
             '${postModel?.body}',
-            style: const TextStyle(
-              fontSize: 12,
-            ),
+            style: const TextStyle(fontSize: 12),
             maxLines: 3,
             overflow: TextOverflow.ellipsis,
           ),
