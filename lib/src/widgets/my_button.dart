@@ -19,15 +19,15 @@ class MyButton extends StatelessWidget {
         backgroundColor: Colors.teal,
         disabledBackgroundColor: Colors.grey,
         minimumSize: const Size(250, 45),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(8),
-        )
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(8)),
       ),
-      onPressed: isEnabled ? () {
-        if (onPressed != null) {
-          onPressed!();
-        }
-      } : null,
+      onPressed: isEnabled
+          ? () {
+              if (onPressed != null) {
+                onPressed!();
+              }
+            }
+          : null,
       child: Text(
         label,
         style: const TextStyle(

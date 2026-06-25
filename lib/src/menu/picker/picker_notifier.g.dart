@@ -10,10 +10,10 @@ part of 'picker_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(Picker)
-const pickerProvider = PickerProvider._();
+final pickerProvider = PickerProvider._();
 
 final class PickerProvider extends $NotifierProvider<Picker, PickerState> {
-  const PickerProvider._()
+  PickerProvider._()
     : super(
         from: null,
         argument: null,
@@ -46,8 +46,7 @@ abstract class _$Picker extends $Notifier<PickerState> {
   PickerState build();
   @$mustCallSuper
   @override
-  void runBuild() {
-    final created = build();
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<PickerState, PickerState>;
     final element =
         ref.element
@@ -57,6 +56,6 @@ abstract class _$Picker extends $Notifier<PickerState> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    return element.handleCreate(ref, build);
   }
 }

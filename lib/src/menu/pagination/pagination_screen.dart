@@ -34,15 +34,9 @@ class _PaginationScreenState extends ConsumerState<PaginationScreen> {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.teal,
-        title: const TitleAppBar(
-          label: 'Pagination',
-        ),
+        title: const TitleAppBar(label: 'Pagination'),
       ),
-      body: SafeArea(
-        child: ContentPagination(
-          scrollController: _controller,
-        ),
-      ),
+      body: SafeArea(child: ContentPagination(scrollController: _controller)),
     );
   }
 

@@ -7,8 +7,9 @@ class PostRepository {
   final NetworkHelper _networkHelper = NetworkHelper();
 
   Future<List<PostModel>> getListPost(int start) async {
-    final Response<dynamic> response = await _networkHelper
-        .get('posts?_start=$start&_limit=$POST_LIMIT') as Response<dynamic>;
+    final Response<dynamic> response =
+        await _networkHelper.get('posts?_start=$start&_limit=$postLimit')
+            as Response<dynamic>;
     return PostModel.buildListFromJson(response.data as List<dynamic>);
   }
 }

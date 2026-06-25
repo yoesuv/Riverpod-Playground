@@ -19,14 +19,10 @@ class CounterScreen extends StatelessWidget {
         child: Center(
           child: Column(
             mainAxisSize: MainAxisSize.min,
-            children: [
-              TextCounter(),
-              CounterAction(),
-            ],
+            children: [TextCounter(), CounterAction()],
           ),
         ),
       ),
     );
   }
-
 }

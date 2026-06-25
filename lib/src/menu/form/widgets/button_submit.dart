@@ -16,9 +16,7 @@ class ButtonSubmit extends ConsumerWidget {
     final fullName = ref.watch(
       formProvider.select((state) => state.fullName.value),
     );
-    final email = ref.watch(
-      formProvider.select((state) => state.email.value),
-    );
+    final email = ref.watch(formProvider.select((state) => state.email.value));
     return Padding(
       padding: const EdgeInsets.only(left: 24, right: 24, bottom: 24),
       child: MyButton(

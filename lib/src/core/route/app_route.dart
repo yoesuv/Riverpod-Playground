@@ -31,9 +31,8 @@ final routerProvider = Provider<GoRouter>((ref) {
       ),
       GoRoute(
         path: FormResultScreen.routeName,
-        builder: (context, state) => FormResultScreen(
-          args: state.extra as FormResultScreenArgs,
-        ),
+        builder: (context, state) =>
+            FormResultScreen(args: state.extra as FormResultScreenArgs),
       ),
       GoRoute(
         path: NetworkingScreen.routeName,

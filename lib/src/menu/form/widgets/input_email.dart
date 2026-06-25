@@ -7,9 +7,7 @@ class InputEmail extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final error = ref.watch(
-      formProvider.select((state) => state.emailError),
-    );
+    final error = ref.watch(formProvider.select((state) => state.emailError));
     return TextField(
       decoration: InputDecoration(
         labelText: 'Email address',

@@ -15,21 +15,15 @@ class CounterAction extends ConsumerWidget {
           onPressed: () {
             ref.read(counterProvider.notifier).onMinus();
           },
-          child: const Icon(
-            Icons.remove,
-            color: Colors.white,
-          ),
+          child: const Icon(Icons.remove, color: Colors.white),
         ),
         MaterialButton(
           color: Colors.teal,
           onPressed: () {
             ref.read(counterProvider.notifier).onPlus();
           },
-          child: const Icon(
-            Icons.add,
-            color: Colors.white,
-          ),
-        )
+          child: const Icon(Icons.add, color: Colors.white),
+        ),
       ],
     );
   }

@@ -10,5 +10,4 @@ sealed class NetworkingState with _$NetworkingState {
     @Default(FormzSubmissionStatus.initial) FormzSubmissionStatus status,
     List<UserModel>? users,
   }) = _NetworkingState;
-
 }

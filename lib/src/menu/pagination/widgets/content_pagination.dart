@@ -4,10 +4,7 @@ import 'package:riverpod_playground/src/menu/pagination/pagination_notifier.dart
 import 'package:riverpod_playground/src/menu/pagination/widgets/item_post.dart';
 
 class ContentPagination extends ConsumerWidget {
-  const ContentPagination({
-    super.key,
-    this.scrollController,
-  });
+  const ContentPagination({super.key, this.scrollController});
 
   final ScrollController? scrollController;
 
@@ -15,12 +12,11 @@ class ContentPagination extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final posts =
         ref.watch(paginationProvider.select((state) => state.posts)) ?? [];
-    final hasReachedMax =
-        ref.watch(paginationProvider.select((state) => state.hasReachedMax));
+    final hasReachedMax = ref.watch(
+      paginationProvider.select((state) => state.hasReachedMax),
+    );
     return posts.isEmpty
-        ? const Center(
-            child: CircularProgressIndicator(),
-          )
+        ? const Center(child: CircularProgressIndicator())
         : ListView.separated(
             controller: scrollController,
             padding: const EdgeInsets.symmetric(vertical: 12),
@@ -39,9 +35,7 @@ class ContentPagination extends ConsumerWidget {
   Widget _loadMore() {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 6),
-      child: Center(
-        child: CircularProgressIndicator(),
-      ),
+      child: Center(child: CircularProgressIndicator()),
     );
   }
 
@@ -49,12 +43,7 @@ class ContentPagination extends ConsumerWidget {
     return const Padding(
       padding: EdgeInsets.symmetric(vertical: 6),
       child: Center(
-        child: Text(
-          'All data loaded',
-          style: TextStyle(
-            fontSize: 14,
-          ),
-        ),
+        child: Text('All data loaded', style: TextStyle(fontSize: 14)),
       ),
     );
   }

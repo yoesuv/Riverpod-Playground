@@ -10,10 +10,10 @@ part of 'form_notifier.dart';
 // ignore_for_file: type=lint, type=warning
 
 @ProviderFor(Form)
-const formProvider = FormProvider._();
+final formProvider = FormProvider._();
 
 final class FormProvider extends $NotifierProvider<Form, FormState> {
-  const FormProvider._()
+  FormProvider._()
     : super(
         from: null,
         argument: null,
@@ -46,8 +46,7 @@ abstract class _$Form extends $Notifier<FormState> {
   FormState build();
   @$mustCallSuper
   @override
-  void runBuild() {
-    final created = build();
+  WhenComplete runBuild() {
     final ref = this.ref as $Ref<FormState, FormState>;
     final element =
         ref.element
@@ -57,6 +56,6 @@ abstract class _$Form extends $Notifier<FormState> {
               Object?,
               Object?
             >;
-    element.handleValue(ref, created);
+    return element.handleCreate(ref, build);
   }
 }
